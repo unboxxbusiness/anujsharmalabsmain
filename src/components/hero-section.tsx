@@ -9,7 +9,7 @@ export function HeroSection() {
     return (
         <main className="overflow-x-hidden">
             <section>
-                <div className="py-16">
+                <div className="py-4">
                     <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
                         <div className="mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
                             <h1 className="text-balance text-4xl font-medium md:text-5xl xl:text-6xl">Automate Marketing. Save Time. Scale with AI.</h1>
