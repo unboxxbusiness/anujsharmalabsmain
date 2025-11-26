@@ -1,1 +1,9 @@
-{}
+{
+  "aboutImage": {
+    "src": "https://picsum.photos/seed/backend-user/760/590",
+    "alt": "AI automation concept",
+    "width": 760,
+    "height": 590,
+    "hint": "AI automation"
+  }
+}
