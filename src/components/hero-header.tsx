@@ -8,6 +8,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { Menu, MoveRight, X } from 'lucide-react';
 import { useState } from 'react';
@@ -76,13 +77,11 @@ export function HeroHeader() {
               {navigationItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   {item.href ? (
-                    <>
-                      <Link href={item.href} legacyBehavior passHref>
-                        <NavigationMenuLink>
-                          <Button variant="ghost">{item.title}</Button>
-                        </NavigationMenuLink>
-                      </Link>
-                    </>
+                    <Link href={item.href} legacyBehavior passHref>
+                      <NavigationMenuLink asChild>
+                        <Button variant="ghost">{item.title}</Button>
+                      </NavigationMenuLink>
+                    </Link>
                   ) : (
                     <>
                       <NavigationMenuTrigger className="font-medium text-sm bg-transparent">
@@ -103,15 +102,12 @@ export function HeroHeader() {
                           </div>
                           <div className="flex flex-col text-sm h-full justify-end">
                             {item.items?.map((subItem) => (
-                              <Link
-                                href={subItem.href}
-                                key={subItem.title}
-                                legacyBehavior
-                                passHref
-                              >
-                                <NavigationMenuLink className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded">
-                                  <span>{subItem.title}</span>
-                                  <MoveRight className="w-4 h-4 text-muted-foreground" />
+                              <Link href={subItem.href} key={subItem.title} legacyBehavior passHref>
+                                <NavigationMenuLink asChild>
+                                  <a className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded">
+                                    <span>{subItem.title}</span>
+                                    <MoveRight className="w-4 h-4 text-muted-foreground" />
+                                  </a>
                                 </NavigationMenuLink>
                               </Link>
                             ))}
