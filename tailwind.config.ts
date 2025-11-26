@@ -88,10 +88,16 @@ export default {
             height: '0',
           },
         },
+        slide: {
+          to: {
+            transform: 'translate(calc(-50% - (var(--_gap) / 2)))',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        slide: 'slide var(--_speed) linear infinite var(--_animation-direction)',
       },
     },
   },
