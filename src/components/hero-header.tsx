@@ -1,131 +1,181 @@
 'use client';
 
-import React from 'react';
+import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+import { Menu, MoveRight, X } from 'lucide-react';
+import { useState } from 'react';
+import Link from 'next/link';
 
 export function HeroHeader() {
-  const [menuOpen, setMenuOpen] = React.useState(false);
-  const menuRef = React.useRef<HTMLDivElement | null>(null);
+  const navigationItems = [
+    {
+      title: 'Home',
+      href: '/',
+      description: '',
+    },
+    {
+      title: 'Product',
+      description: 'Managing a small business today is already tough.',
+      items: [
+        {
+          title: 'Reports',
+          href: '/reports',
+        },
+        {
+          title: 'Statistics',
+          href: '/statistics',
+        },
+        {
+          title: 'Dashboards',
+          href: '/dashboards',
+        },
+        {
+          title: 'Recordings',
+          href: '/recordings',
+        },
+      ],
+    },
+    {
+      title: 'Company',
+      description: 'Managing a small business today is already tough.',
+      items: [
+        {
+          title: 'About us',
+          href: '/about',
+        },
+        {
+          title: 'Fundraising',
+          href: '/fundraising',
+        },
+        {
+          title: 'Investors',
+          href: '/investors',
+        },
+        {
+          title: 'Contact us',
+          href: '/contact',
+        },
+      ],
+    },
+  ];
 
-  // Close on ESC & click outside (mobile overlay)
-  React.useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setMenuOpen(false);
-    }
-    function onClickOutside(e: MouseEvent) {
-      // Check if the click is on the menu itself or the open button
-      if (
-        menuRef.current?.contains(e.target as Node) ||
-        (e.target as HTMLElement).closest('#open-menu')
-      ) {
-        return;
-      }
-      setMenuOpen(false);
-    }
-
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden';
-      document.addEventListener('keydown', onKey);
-      document.addEventListener('click', onClickOutside);
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-      document.removeEventListener('keydown', onKey);
-      document.removeEventListener('click', onClickOutside);
-    };
-  }, [menuOpen]);
-
+  const [isOpen, setOpen] = useState(false);
   return (
-    <nav className="flex items-center justify-between p-4 md:px-16 lg:px-24 xl:px-32 md:py-6 w-full absolute top-0 left-0 z-20">
-      <a
-        href="#"
-        aria-label="Anuj Sharma home"
-        className="flex items-center text-2xl font-bold"
-      >
-        Anuj Sharma
-      </a>
-
-      <div
-        id="menu"
-        ref={menuRef}
-        className={[
-          'max-md:absolute max-md:top-0 max-md:left-0 max-md:transition-transform max-md:duration-300 max-md:overflow-hidden max-md:h-screen max-md:bg-white/80 dark:max-md:bg-black/80 max-md:backdrop-blur-lg',
-          'flex items-center gap-8 font-medium text-gray-800 dark:text-gray-200',
-          'max-md:flex-col max-md:justify-center',
-          menuOpen
-            ? 'max-md:w-full max-md:translate-x-0'
-            : 'max-md:w-0 max-md:-translate-x-full',
-        ].join(' ')}
-        aria-hidden={!menuOpen}
-      >
-        <a href="#about" className="hover:text-primary">
-          About Me
-        </a>
-        <a href="#services" className="hover:text-primary">
-          Services
-        </a>
-        <a href="#portfolio" className="hover:text-primary">
-          Portfolio
-        </a>
-        <a href="#contact" className="hover:text-primary">
-          Contact
-        </a>
-
-        <button
-          onClick={() => setMenuOpen(false)}
-          className="md:hidden absolute top-4 right-4 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-md aspect-square font-medium transition"
-          aria-label="Close menu"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden
-          >
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
-          </svg>
-        </button>
+    <header className="w-full z-40 fixed top-0 left-0 bg-background">
+      <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center">
+        <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
+          <NavigationMenu className="flex justify-start items-start">
+            <NavigationMenuList className="flex justify-start gap-4 flex-row">
+              {navigationItems.map((item) => (
+                <NavigationMenuItem key={item.title}>
+                  {item.href ? (
+                    <>
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink>
+                          <Button variant="ghost">{item.title}</Button>
+                        </NavigationMenuLink>
+                      </Link>
+                    </>
+                  ) : (
+                    <>
+                      <NavigationMenuTrigger className="font-medium text-sm bg-transparent">
+                        {item.title}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="!w-[450px] p-4">
+                        <div className="flex flex-col lg:grid grid-cols-2 gap-4">
+                          <div className="flex flex-col h-full justify-between">
+                            <div className="flex flex-col">
+                              <p className="text-base">{item.title}</p>
+                              <p className="text-muted-foreground text-sm">
+                                {item.description}
+                              </p>
+                            </div>
+                            <Button size="sm" className="mt-10">
+                              Book a call today
+                            </Button>
+                          </div>
+                          <div className="flex flex-col text-sm h-full justify-end">
+                            {item.items?.map((subItem) => (
+                              <Link
+                                href={subItem.href}
+                                key={subItem.title}
+                                legacyBehavior
+                                passHref
+                              >
+                                <NavigationMenuLink className="flex flex-row justify-between items-center hover:bg-muted py-2 px-4 rounded">
+                                  <span>{subItem.title}</span>
+                                  <MoveRight className="w-4 h-4 text-muted-foreground" />
+                                </NavigationMenuLink>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </NavigationMenuContent>
+                    </>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+        <div className="flex lg:justify-center">
+          <p className="font-semibold">Anuj Sharma</p>
+        </div>
+        <div className="flex justify-end w-full gap-4">
+          <Button variant="ghost" className="hidden md:inline">
+            Book a demo
+          </Button>
+          <div className="border-r hidden md:inline"></div>
+          <Button variant="outline">Sign in</Button>
+          <Button>Get started</Button>
+        </div>
+        <div className="flex w-12 shrink lg:hidden items-end justify-end">
+          <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </Button>
+          {isOpen && (
+            <div className="absolute top-20 border-t flex flex-col w-full right-0 bg-background shadow-lg py-4 container gap-8">
+              {navigationItems.map((item) => (
+                <div key={item.title}>
+                  <div className="flex flex-col gap-2">
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="flex justify-between items-center"
+                      >
+                        <span className="text-lg">{item.title}</span>
+                        <MoveRight className="w-4 h-4 stroke-1 text-muted-foreground" />
+                      </Link>
+                    ) : (
+                      <p className="text-lg">{item.title}</p>
+                    )}
+                    {item.items &&
+                      item.items.map((subItem) => (
+                        <Link
+                          key={subItem.title}
+                          href={subItem.href}
+                          className="flex justify-between items-center"
+                        >
+                          <span className="text-muted-foreground">
+                            {subItem.title}
+                          </span>
+                          <MoveRight className="w-4 h-4 stroke-1" />
+                        </Link>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-
-      <a
-        href="#contact"
-        className="hidden md:inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full font-medium transition"
-      >
-        Get in Touch
-      </a>
-
-      <button
-        id="open-menu"
-        onClick={() => setMenuOpen(true)}
-        className="md:hidden p-2 rounded-md aspect-square font-medium transition text-gray-800 dark:text-gray-200"
-        aria-label="Open menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden
-        >
-          <path d="M4 12h16" />
-          <path d="M4 18h16" />
-          <path d="M4 6h16" />
-        </svg>
-      </button>
-    </nav>
+    </header>
   );
 }

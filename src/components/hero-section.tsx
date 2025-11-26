@@ -1,21 +1,22 @@
 'use client';
 
-import React from 'react';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 export function HeroSection() {
   return (
-    <section className="w-full bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] bg-cover bg-center bg-no-repeat pb-44 text-sm">
-      <div className="mx-auto mt-32 flex max-w-4xl flex-col items-center justify-center text-center">
-        <h1 className="text-4xl font-medium md:text-6xl">
+    <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
+      <div className="pt-48 md:pt-40">
+        <h1 className="text-4xl md:text-6xl font-medium max-w-[850px] text-center mx-auto">
           Automate Marketing. Save Time. Scale with AI.
         </h1>
-        <p className="mt-6 max-w-2xl text-base">
+
+        <p className="text-sm md:text-base mx-auto max-w-2xl text-center mt-6 max-md:px-2">
           I help marketers, educators, and digital teams build AI-powered
           workflows that replace manual work with smart automation.
         </p>
-        <div className="mt-8 flex w-full max-w-md flex-col items-center gap-4">
+
+        <div className="mt-8 flex w-full max-w-md flex-col items-center gap-4 mx-auto">
           <p className="font-medium">
             Enter your email to get my free AI Automation Toolkit
           </p>
