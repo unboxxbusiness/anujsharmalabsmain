@@ -74,7 +74,7 @@ export function HeroSection() {
                         <div className="lg:flex lg:items-center lg:gap-12">
                             <div className="relative z-10 mx-auto max-w-xl text-center lg:ml-0 lg:w-1/2 lg:text-left">
 
-                                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">hyderabadenquiry2026</h1>
+                                <h1 className="mt-10 text-balance text-4xl font-bold md:text-5xl xl:text-5xl">Want to Automate Your Marketing, Save Hours of Work, and Scale Faster With AI?</h1>
                                 <p className="mt-8 text-muted-foreground">I help marketers, educators, and digital teams build AI-powered workflows that replace manual work with smart automation.</p>
 
                                 <div>
