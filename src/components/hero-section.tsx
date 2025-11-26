@@ -9,8 +9,7 @@ export function HeroSection() {
     <section className="w-full bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] bg-cover bg-center bg-no-repeat pb-44 text-sm">
       <div className="mx-auto mt-32 flex max-w-4xl flex-col items-center justify-center text-center">
         <h1 className="text-4xl font-medium md:text-6xl">
-          Want to Automate Your Marketing, Save Hours of Work, and Scale Faster
-          With AI?
+          Automate Marketing. Save Time. Scale with AI.
         </h1>
         <p className="mt-6 max-w-2xl text-base">
           I help marketers, educators, and digital teams build AI-powered
