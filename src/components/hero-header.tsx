@@ -1,140 +1,173 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
 
-const menuItems = [
-  { name: 'Use Cases', href: '#' },
-  { name: 'Products', href: '#' },
-  { name: 'Resources', href: '#' },
-  { name: 'Pricing', href: '#' },
-];
+export function HeroHeader() {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const menuRef = React.useRef<HTMLDivElement | null>(null);
 
-function NavItem({
-  label,
-  hasDropdown,
-}: {
-  label: string;
-  hasDropdown?: boolean;
-}) {
+  // Close on ESC & click outside (mobile overlay)
+  React.useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setMenuOpen(false);
+    }
+    function onClickOutside(e: MouseEvent) {
+      if (!menuRef.current) return;
+      if (menuRef.current.contains(e.target as Node)) return;
+      setMenuOpen(false);
+    }
+
+    if (menuOpen) {
+      document.addEventListener('keydown', onKey);
+      document.addEventListener('click', onClickOutside);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('click', onClickOutside);
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   return (
-    <Link
-      href="#"
-      className="flex items-center text-sm text-gray-300 hover:text-white"
-    >
-      <span>{label}</span>
-      {hasDropdown && (
+    <nav className="flex items-center justify-between p-4 md:px-16 lg:px-24 xl:px-32 md:py-6 w-full absolute top-0 left-0 z-20">
+      <a
+        href="https://prebuiltui.com"
+        aria-label="PrebuiltUI home"
+        className="flex items-center"
+      >
+        <svg
+          width="157"
+          height="40"
+          viewBox="0 0 157 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-hidden
+        >
+          <path
+            d="M47.904 28.28q-1.54 0-2.744-.644a5.1 5.1 0 0 1-1.904-1.82q-.672-1.148-.672-2.604v-3.864q0-1.456.7-2.604a4.9 4.9 0 0 1 1.904-1.792q1.204-.672 2.716-.672 1.82 0 3.276.952a6.44 6.44 0 0 1 2.324 2.52q.868 1.567.868 3.556 0 1.96-.868 3.556a6.5 6.5 0 0 1-2.324 2.492q-1.456.924-3.276.924m-7.196 5.32V14.56h3.08v3.612l-.532 3.276.532 3.248V33.6zm6.692-8.232q1.12 0 1.96-.504a3.6 3.6 0 0 0 1.344-1.456q.504-.924.504-2.128t-.504-2.128a3.43 3.43 0 0 0-1.344-1.428q-.84-.532-1.96-.532t-1.988.532a3.43 3.43 0 0 0-1.344 1.428q-.476.924-.476 2.128t.476 2.128a3.6 3.6 0 0 0 1.344 1.456q.87.504 1.988.504M56.95 28V14.56h3.08V28zm3.08-7.476-1.064-.532q0-2.548 1.12-4.116 1.148-1.596 3.444-1.596 1.008 0 1.82.364.812.365 1.512 1.176l-2.016 2.072a2.1 2.1 0 0 0-.812-.56 3 3 0 0 0-1.036-.168q-1.287 0-2.128.812-.84.811-.84 2.548m14.156 7.756q-2.016 0-3.64-.896a7 7 0 0 1-2.548-2.52q-.924-1.596-.924-3.584t.924-3.556a6.87 6.87 0 0 1 2.492-2.52q1.596-.924 3.528-.924 1.876 0 3.304.868a6.05 6.05 0 0 1 2.268 2.38q.84 1.512.84 3.444 0 .336-.056.7a7 7 0 0 1-.112.756H69.23v-2.52h9.436l-1.148 1.008q-.056-1.232-.476-2.072a3 3 0 0 0-1.204-1.288q-.756-.448-1.876-.448-1.176 0-2.044.504a3.43 3.43 0 0 0-1.344 1.428q-.476.896-.476 2.156t.504 2.212 1.428 1.484q.924.504 2.128.504 1.037 0 1.904-.364a4 4 0 0 0 1.512-1.064l1.96 1.988a6.3 6.3 0 0 1-2.38 1.736 7.6 7.6 0 0 1-2.968.588m15.91 0q-1.54 0-2.745-.644a5.1 5.1 0 0 1-1.904-1.82q-.672-1.148-.672-2.604v-3.864q0-1.456.7-2.604a4.9 4.9 0 0 1 1.904-1.792q1.204-.672 2.716-.672 1.821 0 3.276.952a6.44 6.44 0 0 1 2.324 2.52q.869 1.567.868 3.556 0 1.96-.868 3.556a6.5 6.5 0 0 1-2.324 2.492q-1.455.924-3.276.924M82.898 28V7.84h3.08v10.024l-.532 3.248.532 3.276V28zm6.692-2.632q1.12 0 1.96-.504a3.6 3.6 0 0 0 1.344-1.456q.504-.924.504-2.128t-.504-2.128a3.43 3.43 0 0 0-1.344-1.428q-.84-.532-1.96-.532t-1.988.532a3.43 3.43 0 0 0-1.344 1.428q-.476.924-.476 2.128.001 1.204.476 2.128a3.6 3.6 0 0 0 1.344 1.456q.87.504 1.988.504m15.067 2.912q-1.708 0-3.052-.756a5.5 5.5 0 0 1-2.072-2.072q-.728-1.344-.728-3.08V14.56h3.08v7.672q0 .98.308 1.68.336.672.952 1.036.644.364 1.512.364 1.344 0 2.044-.784.728-.812.728-2.296V14.56h3.08v7.812q0 1.764-.756 3.108a5.3 5.3 0 0 1-2.044 2.072q-1.317.728-3.052.728m8.976-.28V14.56h3.08V28zm1.54-15.904q-.783 0-1.316-.532-.504-.532-.504-1.316t.504-1.316a1.8 1.8 0 0 1 1.316-.532q.813 0 1.316.532t.504 1.316q0 .784-.504 1.316t-1.316.532M120.169 28V7.84h3.08V28zm8.552 0V8.96h3.08V28zm-3.22-10.64v-2.8h9.52v2.8zm17.274 10.92q-1.708 0-3.052-.756a5.5 5.5 0 0 1-2.072-2.072q-.728-1.344-.728-3.08V14.56h3.08v7.672q0 .98.308 1.68.336.672.952 1.036.643.364 1.512.364 1.344 0 2.044-.784.728-.812.728-2.296V14.56h3.08v7.812q0 1.764-.756 3.108a5.3 5.3 0 0 1-2.044 2.072q-1.317.728-3.052.728m8.977-.28V14.56h3.08V28zm1.54-15.904q-.785 0-1.316-.532-.504-.532-.504-1.316t.504-1.316a1.8 1.8 0 0 1 1.316-.532q.812 0 1.316.532t.504 1.316-.504 1.316-1.316.532"
+            fill="currentColor"
+          />
+          <path
+            d="m8.75 11.3 6.75 3.884 6.75-3.885M8.75 34.58v-7.755L2 22.939m27 0-6.75 3.885v7.754M2.405 15.408 15.5 22.954l13.095-7.546M15.5 38V22.939M29 28.915V16.962a2.98 2.98 0 0 0-1.5-2.585L17 8.4a3.01 3.01 0 0 0-3 0L3.5 14.377A3 3 0 0 0 2 16.962v11.953A2.98 2.98 0 0 0 3.5 31.5L14 37.477a3.01 3.01 0 0 0 3 0L27.5 31.5a3 3 0 0 0 1.5-2.585"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </a>
+
+      <div
+        id="menu"
+        ref={menuRef}
+        className={[
+          'max-md:absolute max-md:top-0 max-md:left-0 max-md:transition-all max-md:duration-300 max-md:overflow-hidden max-md:h-full max-md:bg-white/50 max-md:backdrop-blur',
+          'flex items-center gap-8 font-medium',
+          'max-md:flex-col max-md:justify-center',
+          menuOpen ? 'max-md:w-full' : 'max-md:w-0',
+        ].join(' ')}
+        aria-hidden={!menuOpen}
+      >
+        <a href="#" className="hover:text-gray-600">
+          Home
+        </a>
+
+        <div className="relative group flex items-center gap-1 cursor-pointer">
+          <span>Products</span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden
+          >
+            <path
+              d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <div className="absolute bg-white font-normal flex flex-col gap-2 w-max rounded-lg p-4 top-36 left-0 opacity-0 -translate-y-full group-hover:top-44 group-hover:opacity-100 transition-all duration-300 shadow-sm">
+            <a href="#" className="hover:translate-x-1 hover:text-slate-500 transition-all">
+              Templates
+            </a>
+            <a href="#" className="hover:translate-x-1 hover:text-slate-500 transition-all">
+              UI Components
+            </a>
+            <a href="#" className="hover:translate-x-1 hover:text-slate-500 transition-all">
+              Mobile Apps
+            </a>
+            <a href="#" className="hover:translate-x-1 hover:text-slate-500 transition-all">
+              Web Apps
+            </a>
+          </div>
+        </div>
+
+        <a href="#" className="hover:text-gray-600">
+          Stories
+        </a>
+        <a href="#" className="hover:text-gray-600">
+          Pricing
+        </a>
+
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="md:hidden bg-gray-800 hover:bg-black text-white p-2 rounded-md aspect-square font-medium transition"
+          aria-label="Close menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <button className="hidden md:block bg-gray-800 hover:bg-black text-white px-6 py-3 rounded-full font-medium transition">
+        Contact Us
+      </button>
+
+      <button
+        id="open-menu"
+        onClick={() => setMenuOpen(true)}
+        className="md:hidden bg-gray-800 hover:bg-black text-white p-2 rounded-md aspect-square font-medium transition"
+        aria-label="Open menu"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="24"
+          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="ml-1"
+          aria-hidden
         >
-          <path d="m6 9 6 6 6-6" />
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+          <path d="M4 6h16" />
         </svg>
-      )}
-    </Link>
+      </button>
+    </nav>
   );
 }
-
-function MobileNavItem({ label, href }: { label: string; href: string }) {
-  return (
-    <Link
-      href={href}
-      className="flex items-center justify-between border-b border-gray-800 pb-2 text-lg text-white"
-    >
-      <span>{label}</span>
-      <X className="h-4 w-4 text-gray-400" />
-    </Link>
-  );
-}
-
-export const HeroHeader = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  return (
-    <>
-      <header className="fixed top-0 z-50 w-full bg-black/50 backdrop-blur-sm">
-        <nav className="container mx-auto flex items-center justify-between px-4 py-4">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-black">
-                <span className="font-bold">⚡</span>
-              </div>
-              <span className="ml-2 text-xl font-bold text-white">
-                LeadGenie
-              </span>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden items-center space-x-6 md:flex">
-            <div className="flex items-center space-x-6">
-              <NavItem label="Use Cases" hasDropdown />
-              <NavItem label="Products" hasDropdown />
-              <NavItem label="Resources" hasDropdown />
-              <NavItem label="Pricing" />
-            </div>
-            <div className="flex items-center space-x-3">
-              <Button
-                variant="ghost"
-                className="text-white hover:bg-white/10 hover:text-white"
-              >
-                Login
-              </Button>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            <span className="sr-only">Toggle menu</span>
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6 text-white" />
-            ) : (
-              <Menu className="h-6 w-6 text-white" />
-            )}
-          </button>
-        </nav>
-      </header>
-
-      {/* Mobile Navigation Menu with animation */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ y: '-100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '-100%' }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 flex flex-col bg-black/95 p-4 md:hidden"
-          >
-            <div className="mt-16 flex flex-col space-y-6">
-              {menuItems.map((item) => (
-                <MobileNavItem key={item.name} {...item} />
-              ))}
-              <div className="pt-4">
-                <Button className="w-full justify-start border border-gray-700 text-white">
-                  Log in
-                </Button>
-              </div>
-              <Button className="h-12 rounded-full bg-white px-8 text-base font-medium text-black hover:bg-white/90">
-                Get Started For Free
-              </Button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
-  );
-};
