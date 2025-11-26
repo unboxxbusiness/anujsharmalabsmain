@@ -1,65 +1,42 @@
 'use client';
 
 import React from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 export function HeroSection() {
   return (
-    <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
-      <div className="flex items-center gap-2 border border-slate-300 hover:border-slate-400/70 rounded-full w-max mx-auto px-4 py-2 mt-40 md:mt-32">
-        <span>New announcement on your inbox</span>
-        <button className="flex items-center gap-1 font-medium">
-          <span>Read more</span>
-          <svg
-            width="19"
-            height="19"
-            viewBox="0 0 19 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden
-          >
-            <path
-              d="M3.959 9.5h11.083m0 0L9.501 3.958M15.042 9.5l-5.541 5.54"
-              stroke="#050040"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+    <section className="w-full bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] bg-cover bg-center bg-no-repeat pb-44 text-sm">
+      <div className="mx-auto mt-32 flex max-w-4xl flex-col items-center justify-center text-center">
+        <h1 className="text-4xl font-medium md:text-6xl">
+          Want to Automate Your Marketing, Save Hours of Work, and Scale Faster
+          With AI?
+        </h1>
+        <p className="mt-6 max-w-2xl text-base">
+          I help marketers, educators, and digital teams build AI-powered
+          workflows that replace manual work with smart automation.
+        </p>
+        <div className="mt-8 flex w-full max-w-md flex-col items-center gap-4">
+          <p className="font-medium">
+            Enter your email to get my free AI Automation Toolkit
+          </p>
+          <div className="flex w-full flex-col gap-2 sm:flex-row">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-grow"
             />
-          </svg>
-        </button>
-      </div>
-
-      <h5 className="text-4xl md:text-7xl font-medium max-w-[850px] text-center mx-auto mt-8">
-        Build apps faster with ui components
-      </h5>
-
-      <p className="text-sm md:text-base mx-auto max-w-2xl text-center mt-6 max-md:px-2">
-        Build sleek, consistent UIs without wrestling with design systems, our
-        components handle the heavy lifting so you can ship faster.
-      </p>
-
-      <div className="mx-auto w-full flex items-center justify-center gap-3 mt-4">
-        <button className="bg-slate-800 hover:bg-black text-white px-6 py-3 rounded-full font-medium transition">
-          Get Started
-        </button>
-        <button className="flex items-center gap-2 border border-slate-300 hover:bg-slate-200/30 rounded-full px-6 py-3">
-          <span>Learn More</span>
-          <svg
-            width="6"
-            height="8"
-            viewBox="0 0 6 8"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden
-          >
-            <path
-              d="M1.25.5 4.75 4l-3.5 3.5"
-              stroke="#050040"
-              strokeOpacity=".4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
+            <Button className="bg-slate-800 text-white hover:bg-black">
+              Get the Toolkit
+            </Button>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-muted-foreground">Or</span>
+            <Button variant="link" className="p-0">
+              Book a Free Strategy Call
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );
