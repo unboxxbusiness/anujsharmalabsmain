@@ -8,6 +8,7 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(var(--background));
 }
 
 @layer base {
@@ -88,5 +89,11 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-noise {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY2bm5uPj4+NjY2bm5uPj4+NjY2bm5uPj4+NjY2bm5uPj4+NjY2bm5uPj4+NjY2bm5uPj4+NjY2bm5uPj4+NjY2bm5uPj4+NjY2cyr3EAAAAGXRSTlMA2d/h1sLw2N/h1sLw2N/h1sLw2N/h1sLw2N/h1sLw2N/h1sLw2N/h1mcpeG4AAAAlSURBVEjHY2CAAUYwYGBhYGAwYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYDBAAAhwASfx0a8yAAAAAElFTkSuQmCC');
   }
 }
