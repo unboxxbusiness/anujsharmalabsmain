@@ -1,121 +1,73 @@
 'use client';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 import {
-  IconRobot,
-  IconBrandCampaignmonitor,
+  IconClipboardList,
+  IconPlayerPlay,
+  IconPencil,
   IconFileText,
-  IconSeo,
-  IconPlaystationCircle,
-  IconBrandZapier,
-  IconFilter,
-  IconBrowser,
 } from '@tabler/icons-react';
+import React from 'react';
 
 export function ServicesSection() {
-  const features = [
+  const tools = [
     {
-      title: 'AI Automation',
+      title: 'AI Workflow Library',
       description:
-        'Leverage artificial intelligence to automate repetitive tasks and workflows.',
-      icon: <IconRobot />,
+        'Copy/paste-ready automated workflows for marketing, content, and funnels.',
+      cta: 'Use It Free',
+      icon: <IconClipboardList size={24} />,
     },
     {
-      title: 'Digital Marketing',
-      description:
-        'Comprehensive strategies to boost your online presence and engagement.',
-      icon: <IconBrandCampaignmonitor />,
+      title: 'AI Tool Finder Quiz',
+      description: 'Not sure which AI tools you need? Answer 6 questions.',
+      cta: 'Take the Quiz',
+      icon: <IconPencil size={24} />,
     },
     {
-      title: 'Content Strategy',
-      description:
-        'Developing and managing content that aligns with your business goals.',
-      icon: <IconFileText />,
+      title: 'Free Automation Audit',
+      description: 'Get a customized report on what you can automate today.',
+      cta: 'Start the Audit',
+      icon: <IconPlayerPlay size={24} />,
     },
     {
-      title: 'SEO',
-      description:
-        'Improve your search engine rankings and drive organic traffic.',
-      icon: <IconSeo />,
-    },
-    {
-      title: 'Marketing Automation',
-      description:
-        'Automate your marketing efforts to nurture leads and save time.',
-      icon: <IconPlaystationCircle />,
-    },
-    {
-      title: 'Zapier & Make.com',
-      description:
-        'Integrate your apps and automate workflows without writing code.',
-      icon: <IconBrandZapier />,
-    },
-    {
-      title: 'Marketing Funnels',
-      description: 'Design and optimize funnels that convert visitors into customers.',
-      icon: <IconFilter />,
-    },
-    {
-      title: 'Landing Pages',
-      description: 'Create high-converting landing pages for your campaigns.',
-      icon: <IconBrowser />,
+      title: 'AI Content Engine Template (Notion)',
+      description: 'Create 10–30 pieces of content weekly using automated workflows.',
+      cta: 'Download Free Template',
+      icon: <IconFileText size={24} />,
     },
   ];
+
   return (
-    <section id="services" className="py-16 md:py-32">
+    <section id="services" className="py-16 md:py-32 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6 mb-12 text-center">
-        <h2 className="text-4xl font-medium lg:text-5xl">My Services</h2>
+        <h2 className="text-4xl font-medium lg:text-5xl">
+          Start Here — My Free AI Automation Tools
+        </h2>
         <p className="text-muted-foreground mt-4">
-          I provide a range of services to help your business grow and thrive in
-          the digital landscape.
+          These free tools will save you hours immediately.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 max-w-7xl mx-auto">
-        {features.map((feature, index) => (
-          <Feature key={feature.title} {...feature} index={index} />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
+        {tools.map((tool) => (
+          <div
+            key={tool.title}
+            className="bg-white p-6 rounded-lg shadow-sm border flex flex-col"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="bg-primary/10 text-primary p-2 rounded-full">
+                {tool.icon}
+              </div>
+              <h3 className="text-xl font-semibold">{tool.title}</h3>
+            </div>
+            <p className="text-muted-foreground mb-6 flex-grow">
+              {tool.description}
+            </p>
+            <Button asChild>
+              <a href="#">{tool.cta}</a>
+            </Button>
+          </div>
         ))}
       </div>
     </section>
   );
 }
-
-const Feature = ({
-  title,
-  description,
-  icon,
-  index,
-}: {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  index: number;
-}) => {
-  return (
-    <div
-      className={cn(
-        'flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800',
-        (index === 0 || index === 4) && 'lg:border-l dark:border-neutral-800',
-        index < 4 && 'lg:border-b dark:border-neutral-800'
-      )}
-    >
-      {index < 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
-      )}
-      {index >= 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
-      )}
-      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
-        {icon}
-      </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
-          {title}
-        </span>
-      </div>
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
-        {description}
-      </p>
-    </div>
-  );
-};
