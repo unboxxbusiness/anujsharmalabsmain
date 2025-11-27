@@ -47,36 +47,43 @@ function OriginStorySection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="mx-auto max-w-3xl px-6 space-y-6 md:space-y-8">
-        <Typography variant="h2" as="h2" className="text-center">
-          My Journey Into AI Systems
-        </Typography>
-        <div className="space-y-6 text-lg text-muted-foreground">
-          <Typography variant="p" as="p">
-            I’ve spent the last several years leading digital transformation at
-            Amity University, one of the largest educational institutions in
-            India. Working across marketing, content, admissions, digital
-            operations, and cross-functional teams taught me one truth:
+    <section className="py-16 md:py-24 bg-background-dark text-foreground-dark">
+      <div className="mx-auto max-w-3xl px-6 space-y-12 md:space-y-16">
+        <div className="space-y-6 md:space-y-8">
+          <Typography
+            variant="h2"
+            as="h2"
+            className="text-center !border-none"
+          >
+            My Journey Into AI Systems
           </Typography>
-          <blockquote className="border-l-4 pl-4 italic text-xl font-semibold text-foreground">
-            👉 Most teams don’t need more tools. They need better systems.
-          </blockquote>
-          <Typography variant="p" as="p">
-            Teams weren’t struggling because they lacked skill. They were
-            struggling because their workflows were slow, repetitive, and
-            chaotic.
-          </Typography>
-          <Typography variant="p" as="p">
-            When I started applying AI strategically — not as a tool, but as a
-            system — everything changed.
-          </Typography>
+          <div className="space-y-6 text-lg text-muted-foreground-dark">
+            <Typography variant="p" as="p">
+              I’ve spent the last several years leading digital transformation
+              at Amity University, one of the largest educational institutions
+              in India. Working across marketing, content, admissions, digital
+              operations, and cross-functional teams taught me one truth:
+            </Typography>
+            <blockquote className="border-l-4 pl-4 italic text-xl font-semibold text-foreground-dark">
+              👉 Most teams don’t need more tools. They need better systems.
+            </blockquote>
+            <Typography variant="p" as="p">
+              Teams weren’t struggling because they lacked skill. They were
+              struggling because their workflows were slow, repetitive, and
+              chaotic.
+            </Typography>
+            <Typography variant="p" as="p">
+              When I started applying AI strategically — not as a tool, but as a
+              system — everything changed.
+            </Typography>
+          </div>
         </div>
+
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
           {benefits.map((benefit) => (
             <li key={benefit} className="flex items-center gap-3">
-              <div className="bg-primary/10 p-1.5 rounded-full">
-                <Check className="size-4 text-primary" />
+              <div className="bg-primary-dark/10 p-1.5 rounded-full">
+                <Check className="size-4 text-primary-dark" />
               </div>
               <Typography as="span" variant="body">
                 {benefit}
@@ -84,7 +91,7 @@ function OriginStorySection() {
             </li>
           ))}
         </ul>
-        <div className="space-y-6 text-lg text-muted-foreground">
+        <div className="space-y-6 text-lg text-muted-foreground-dark">
           <Typography variant="p" as="p">
             That’s when I realized my mission: To help organizations implement
             AI in a simple, accessible, and meaningful way — without complexity
