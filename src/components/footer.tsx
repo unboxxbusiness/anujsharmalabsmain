@@ -20,7 +20,7 @@ export function Footer() {
         { label: 'Home', href: '/' },
         { label: 'About', href: '#about-me' },
         { label: 'Framework', href: '#framework' },
-        { label: 'Work With Me', href: '#contact' },
+        { label: 'Work With Me', href: '/work-with-me' },
       ],
     },
     {
@@ -90,7 +90,7 @@ export function Footer() {
               Contact
             </Typography>
             <address className="space-y-2 text-sm not-italic text-muted-foreground">
-              <Link href="#contact" className="block transition-colors hover:text-primary">
+              <Link href="/work-with-me" className="block transition-colors hover:text-primary">
                 Work With Me
               </Link>
             </address>
