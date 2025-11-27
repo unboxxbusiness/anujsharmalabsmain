@@ -10,24 +10,23 @@ export function SimpleAiSystemSection() {
     {
       letter: 'S',
       title: 'Simplify the Problem',
-      description: 'Identify inefficiencies, bottlenecks & repetitive tasks.',
+      description: 'Find the real bottleneck and remove noise.',
     },
     {
       letter: 'I',
       title: 'Integrate AI Tools',
-      description:
-        'Choose simple, easy-to-use tools the team can adopt instantly.',
+      description: 'Choose tools that are simple, practical, and actionable.',
     },
     {
       letter: 'M',
       title: 'Map the Workflow',
-      description:
-        'Turn processes into clear, step-by-step automation-ready flows.',
+      description: 'Turn complex processes into clean, step-by-step flows.',
     },
     {
       letter: 'P',
       title: 'Produce Templates',
-      description: 'Build prompts, templates, and content engines.',
+      description:
+        'Build prompt libraries, content systems & automation templates.',
     },
     {
       letter: 'L',
@@ -37,7 +36,7 @@ export function SimpleAiSystemSection() {
     {
       letter: 'E',
       title: 'Evaluate & Improve',
-      description: 'Optimize every 30 days for better performance.',
+      description: 'Optimize regularly for better performance.',
     },
   ];
 
@@ -46,15 +45,14 @@ export function SimpleAiSystemSection() {
       <div className="mx-auto max-w-7xl space-y-8 px-6 md:space-y-12">
         <div className="text-center">
           <Typography variant="h2" as="h2">
-            My 6-Step Framework for Automating Any Workflow
+            The S.I.M.P.L.E. AI System™
           </Typography>
           <Typography
             variant="p"
             as="p"
             className="mx-auto mt-4 max-w-3xl text-muted-foreground"
           >
-            The S.I.M.P.L.E. AI System™ is the framework I use to build custom AI
-            systems for marketing, education, and digital operations.
+            A 6-step method to automate any workflow inside any team.
           </Typography>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10">
@@ -69,7 +67,14 @@ export function SimpleAiSystemSection() {
           ))}
         </div>
         <div className="text-center">
-          <Button size="lg">Learn the Framework</Button>
+          <Typography
+            variant="p"
+            as="p"
+            className="mx-auto mt-4 max-w-3xl text-muted-foreground"
+          >
+            This system works across marketing, education, digital operations,
+            and leadership workflows.
+          </Typography>
         </div>
       </div>
     </section>
