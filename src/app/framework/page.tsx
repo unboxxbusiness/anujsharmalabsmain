@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import Link from 'next/link';
+import { FrameworkIntroSection } from '@/components/framework-intro-section';
 
 function FrameworkHeroSection() {
   return (
@@ -39,6 +40,7 @@ export default function FrameworkPage() {
   return (
     <main>
       <FrameworkHeroSection />
+      <FrameworkIntroSection />
     </main>
   );
 }
