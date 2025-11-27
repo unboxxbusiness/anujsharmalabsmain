@@ -1,7 +1,7 @@
 'use client';
 
 import { Typography } from '@/components/ui/typography';
-import { X } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 
 export function WhyFrameworkExistsSection() {
   const problems = [
@@ -16,7 +16,7 @@ export function WhyFrameworkExistsSection() {
 
   return (
     <section className="py-16 md:py-24 bg-background">
-      <div className="mx-auto max-w-3xl px-6 space-y-12">
+      <div className="mx-auto max-w-5xl px-6 space-y-12">
         <div className="space-y-6 md:space-y-8 text-center">
           <Typography
             variant="h2"
@@ -27,27 +27,38 @@ export function WhyFrameworkExistsSection() {
           </Typography>
           <div className="space-y-6 text-lg text-muted-foreground">
             <Typography variant="p" as="p">
-              AI tools are everywhere. But without a system, teams end up:
+              AI tools are everywhere. But without a system, teams end up with chaos. The S.I.M.P.L.E. AI System gives teams a structure that makes AI predictable, useful, and clear.
             </Typography>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-          {problems.map((problem) => (
-            <li key={problem} className="flex items-center gap-3 list-none">
-              <div className="bg-destructive/10 p-1.5 rounded-full">
-                <X className="size-4 text-destructive" />
-              </div>
-              <Typography as="span" variant="body" className="text-foreground">
-                {problem}
-              </Typography>
-            </li>
-          ))}
-        </div>
-        <div className="text-center">
-          <Typography variant="p" as="p" className="text-lg font-semibold text-foreground !mt-0">
-            The S.I.M.P.L.E. AI System gives teams a structure that makes AI predictable and useful.
-          </Typography>
+        <div className="w-full overflow-x-auto">
+          <table className="w-full min-w-max">
+            <thead>
+              <tr className="border-b">
+                <th className="p-4 text-left font-semibold text-lg">The Problem</th>
+                <th className="p-4 text-center font-semibold text-lg bg-destructive/10 text-destructive rounded-t-lg">Chaos (Without a System)</th>
+                <th className="p-4 text-center font-semibold text-lg bg-primary/10 text-primary rounded-t-lg">Clarity (With S.I.M.P.L.E.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {problems.map((problem, index) => (
+                <tr key={index} className="border-b">
+                  <td className="p-4 text-muted-foreground">{problem}</td>
+                  <td className="p-4 bg-destructive/10 text-center">
+                    <div className="inline-flex justify-center items-center size-6 bg-destructive/20 rounded-full">
+                        <X className="size-4 text-destructive" />
+                    </div>
+                  </td>
+                  <td className="p-4 bg-primary/10 text-center">
+                    <div className="inline-flex justify-center items-center size-6 bg-primary/20 rounded-full">
+                        <Check className="size-4 text-primary" />
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
