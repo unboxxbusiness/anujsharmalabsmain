@@ -6,6 +6,7 @@ import { Typography } from '@/components/ui/typography';
 import { NewsletterAboutSection } from '@/components/newsletter-about-section';
 import { WeeklyNewsletterBenefitsSection } from '@/components/weekly-newsletter-benefits-section';
 import { WhoIsItForSection } from '@/components/who-is-it-for-section';
+import { FinalInvitationSection } from '@/components/final-invitation-section';
 
 function NewsletterHeroSection() {
   return (
@@ -60,6 +61,7 @@ export default function NewsletterPage() {
       <NewsletterAboutSection />
       <WeeklyNewsletterBenefitsSection />
       <WhoIsItForSection />
+      <FinalInvitationSection />
     </main>
   );
 }
