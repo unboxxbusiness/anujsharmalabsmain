@@ -53,7 +53,7 @@ function OriginStorySection() {
           <Typography
             variant="h2"
             as="h2"
-            className="text-center !border-none"
+            className="text-center !border-none text-foreground-dark"
           >
             My Journey Into AI Systems
           </Typography>
@@ -85,7 +85,7 @@ function OriginStorySection() {
               <div className="bg-primary-dark/10 p-1.5 rounded-full">
                 <Check className="size-4 text-primary-dark" />
               </div>
-              <Typography as="span" variant="body">
+              <Typography as="span" variant="body" className="text-foreground-dark">
                 {benefit}
               </Typography>
             </li>
