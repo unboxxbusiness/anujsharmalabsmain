@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Typography } from '@/components/ui/typography';
 import { NewsletterAboutSection } from '@/components/newsletter-about-section';
 import { WeeklyNewsletterBenefitsSection } from '@/components/weekly-newsletter-benefits-section';
+import { WhoIsItForSection } from '@/components/who-is-it-for-section';
 
 function NewsletterHeroSection() {
   return (
@@ -58,6 +59,7 @@ export default function NewsletterPage() {
       <NewsletterHeroSection />
       <NewsletterAboutSection />
       <WeeklyNewsletterBenefitsSection />
+      <WhoIsItForSection />
     </main>
   );
 }
