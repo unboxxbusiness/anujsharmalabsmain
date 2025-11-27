@@ -9,6 +9,7 @@ import { SimpleAiSystemSection } from '@/components/simple-ai-system-section';
 import { RealWorldApplicationsSection } from '@/components/real-world-applications-section';
 import { BenefitsSection } from '@/components/benefits-section';
 import { FreeResourcesSection } from '@/components/free-resources-section';
+import { InvitationSection } from '@/components/invitation-section';
 
 function FrameworkHeroSection() {
   return (
@@ -51,6 +52,7 @@ export default function FrameworkPage() {
       <RealWorldApplicationsSection />
       <BenefitsSection />
       <FreeResourcesSection />
+      <InvitationSection />
     </main>
   );
 }
