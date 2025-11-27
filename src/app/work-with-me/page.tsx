@@ -5,6 +5,7 @@ import { Typography } from '@/components/ui/typography';
 import { WhatIDoSection } from '@/components/what-i-do-section';
 import { WhoThisIsForSection } from '@/components/who-this-is-for-section';
 import { ServicesOffersSection } from '@/components/services-offers-section';
+import { MyProcessSection } from '@/components/my-process-section';
 
 function WorkWithMeHeroSection() {
   return (
@@ -42,6 +43,7 @@ export default function WorkWithMePage() {
       <WhatIDoSection />
       <WhoThisIsForSection />
       <ServicesOffersSection />
+      <MyProcessSection />
     </main>
   );
 }
