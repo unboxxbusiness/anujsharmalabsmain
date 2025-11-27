@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { HeroHeader } from '@/components/hero-header';
 import { Toaster } from '@/components/ui/toaster';
+import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
   title: 'Anuj Sharma | AI Automation & Digital Marketing',
@@ -20,6 +21,7 @@ export default function RootLayout({
         <HeroHeader />
         {children}
         <Toaster />
+        <Footer />
       </body>
     </html>
   );
