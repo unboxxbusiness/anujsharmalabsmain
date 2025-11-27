@@ -7,6 +7,7 @@ import { FrameworkIntroSection } from '@/components/framework-intro-section';
 import { WhyFrameworkExistsSection } from '@/components/why-framework-exists-section';
 import { SimpleAiSystemSection } from '@/components/simple-ai-system-section';
 import { RealWorldApplicationsSection } from '@/components/real-world-applications-section';
+import { BenefitsSection } from '@/components/benefits-section';
 
 function FrameworkHeroSection() {
   return (
@@ -47,6 +48,7 @@ export default function FrameworkPage() {
       <WhyFrameworkExistsSection />
       <SimpleAiSystemSection />
       <RealWorldApplicationsSection />
+      <BenefitsSection />
     </main>
   );
 }
