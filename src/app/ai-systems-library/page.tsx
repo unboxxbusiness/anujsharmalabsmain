@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
+import { IntroSection } from '@/components/intro-section';
 
 function AiSystemsLibraryHeroSection() {
   return (
@@ -36,6 +37,7 @@ export default function AiSystemsLibraryPage() {
   return (
     <main>
       <AiSystemsLibraryHeroSection />
+      <IntroSection />
     </main>
   );
 }
