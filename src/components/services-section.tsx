@@ -1,12 +1,8 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
-import {
-  Download,
-  Library,
-  Mail,
-  PlayCircle,
-} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Download, Library, Mail, PlayCircle } from 'lucide-react';
 import React from 'react';
 
 export function ServicesSection() {
@@ -15,22 +11,26 @@ export function ServicesSection() {
       title: 'Download the AI Workflow Guide',
       description: 'Get 7 plug-and-play workflows that save 5–10 hours weekly.',
       icon: <Download size={24} />,
+      number: 1,
     },
     {
       title: 'Watch the 3-Minute AI Intro Video',
       description: 'Understand exactly how simple, effective AI systems work.',
       icon: <PlayCircle size={24} />,
+      number: 2,
     },
     {
       title: 'Explore the AI Systems Library',
       description: 'Learn the workflows, tools & templates top teams use.',
       icon: <Library size={24} />,
+      number: 3,
     },
     {
       title: 'Join My Newsletter',
       description:
         'Weekly insights on workflow automation & content systems.',
       icon: <Mail size={24} />,
+      number: 4,
     },
   ];
 
@@ -50,14 +50,14 @@ export function ServicesSection() {
         </Typography>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
-        {steps.map((step, index) => (
+        {steps.map((step) => (
           <div
             key={step.title}
             className="bg-white p-6 rounded-lg shadow-sm border flex"
           >
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 text-3xl font-bold text-primary/20">
-                {index + 1}
+                {step.number}
               </div>
               <div>
                 <Typography variant="h3" as="h3" className="mb-2">
