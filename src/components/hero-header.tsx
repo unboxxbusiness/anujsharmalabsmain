@@ -20,12 +20,14 @@ import {
 } from '@/components/ui/navigation-menu';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Typography } from '@/components/ui/typography';
+import * as React from 'react';
 
 interface MenuItem {
   title: string;
@@ -44,6 +46,10 @@ const menu: MenuItem[] = [
 ];
 
 export function HeroHeader() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <header className="py-4 bg-background/80 backdrop-blur-sm fixed top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -75,7 +81,7 @@ export function HeroHeader() {
                 Anuj Sharma
               </Typography>
             </Link>
-            <Sheet>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
                   <Menu className="size-4" />
@@ -84,7 +90,11 @@ export function HeroHeader() {
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <Link href="/" className="flex items-center gap-2">
+                    <Link
+                      href="/"
+                      className="flex items-center gap-2"
+                      onClick={closeMobileMenu}
+                    >
                       <Typography variant="h3" as="span">
                         Anuj Sharma
                       </Typography>
@@ -98,6 +108,7 @@ export function HeroHeader() {
                         key={item.title}
                         href={item.url}
                         className="font-semibold text-lg py-2"
+                        onClick={closeMobileMenu}
                       >
                         {item.title}
                       </Link>
@@ -106,7 +117,9 @@ export function HeroHeader() {
 
                   <div className="flex flex-col gap-3">
                     <Button asChild>
-                      <Link href="#contact">Get in Touch</Link>
+                      <Link href="#contact" onClick={closeMobileMenu}>
+                        Get in Touch
+                      </Link>
                     </Button>
                   </div>
                 </div>
