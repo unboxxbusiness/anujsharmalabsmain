@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import { IntroSection } from '@/components/intro-section';
 import { SolutionsSection } from '@/components/solutions-section';
+import { AllWorkflowsSection } from '@/components/all-workflows-section';
 
 function AiSystemsLibraryHeroSection() {
   return (
@@ -40,6 +41,7 @@ export default function AiSystemsLibraryPage() {
       <AiSystemsLibraryHeroSection />
       <IntroSection />
       <SolutionsSection />
+      <AllWorkflowsSection />
     </main>
   );
 }
