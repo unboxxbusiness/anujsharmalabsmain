@@ -7,6 +7,7 @@ import { SimpleAiSystemSection } from '@/components/simple-ai-system-section';
 import { MyMissionSection } from '@/components/my-mission-section';
 import { MyValuesSection } from '@/components/my-values-section';
 import { WhoIWorkWithSection } from '@/components/who-i-work-with-section';
+import { InvitationSection } from '@/components/invitation-section';
 
 function AboutUsHeroSection() {
   return (
@@ -105,6 +106,7 @@ export default function AboutUsPage() {
       <MyMissionSection />
       <MyValuesSection />
       <WhoIWorkWithSection />
+      <InvitationSection />
     </main>
   );
 }
