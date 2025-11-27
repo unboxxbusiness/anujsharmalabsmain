@@ -3,6 +3,7 @@
 import { CheckCircle } from 'lucide-react';
 import { InfiniteSlider } from './ui/infinite-slider';
 import { Button } from './ui/button';
+import { Typography } from './ui/typography';
 
 export function ResultsSection() {
   const proofPoints = [
@@ -24,9 +25,9 @@ export function ResultsSection() {
   return (
     <section id="results" className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl space-y-8 px-6 text-center md:space-y-12">
-        <h2 className="text-4xl font-medium lg:text-5xl">
+        <Typography variant="h2" as="h2">
           Trusted By Teams Who Want Practical AI Systems
-        </h2>
+        </Typography>
 
         <div className="mx-auto max-w-4xl">
           <InfiniteSlider gap={64}>
@@ -45,11 +46,15 @@ export function ResultsSection() {
           {proofPoints.map((point) => (
             <div key={point} className="flex items-start gap-3">
               <CheckCircle className="mt-1 size-5 shrink-0 text-primary" />
-              <p className="text-lg text-muted-foreground">{point}</p>
+              <Typography variant="p" as="p" className="text-lg text-muted-foreground">
+                {point}
+              </Typography>
             </div>
           ))}
         </div>
-        <Button size="lg" disabled>See Case Studies</Button>
+        <Button size="lg" disabled>
+          See Case Studies
+        </Button>
       </div>
     </section>
   );

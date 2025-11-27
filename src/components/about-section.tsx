@@ -1,5 +1,6 @@
 'use client';
 
+import { Typography } from '@/components/ui/typography';
 import { BrainCircuit, GraduationCap, Target } from 'lucide-react';
 
 export function AboutSection() {
@@ -28,15 +29,19 @@ export function AboutSection() {
     <section id="about" className="py-16 md:py-32 bg-slate-50">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
         <div className="text-center">
-          <h2 className="text-4xl font-medium lg:text-5xl">
+          <Typography variant="h2" as="h2">
             Simple AI Systems That Create Real Results
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
+          </Typography>
+          <Typography
+            variant="p"
+            as="p"
+            className="mx-auto mt-4 max-w-3xl text-muted-foreground"
+          >
             Most teams don’t need more AI tools — they need better systems. I
             design practical, plug-and-play AI workflows that reduce repetitive
             work, improve team efficiency, and help organizations create more in
             less time.
-          </p>
+          </Typography>
         </div>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-3">
           {pillars.map((pillar) => (
@@ -48,9 +53,13 @@ export function AboutSection() {
                 <div className="rounded-full bg-primary/10 p-3 text-primary">
                   {pillar.icon}
                 </div>
-                <h3 className="text-xl font-semibold">{pillar.title}</h3>
+                <Typography variant="h3" as="h3">
+                  {pillar.title}
+                </Typography>
               </div>
-              <p className="text-muted-foreground">{pillar.description}</p>
+              <Typography variant="p" as="p" className="text-muted-foreground">
+                {pillar.description}
+              </Typography>
             </div>
           ))}
         </div>

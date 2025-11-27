@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
-import Link from "next/link";
+import { Book, Menu, Sunset, Trees, Zap } from 'lucide-react';
+import Link from 'next/link';
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,14 +17,15 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from '@/components/ui/navigation-menu';
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet';
+import { Typography } from '@/components/ui/typography';
 
 interface MenuItem {
   title: string;
@@ -35,10 +36,10 @@ interface MenuItem {
 }
 
 const menu: MenuItem[] = [
-  { title: "About", url: "#about" },
-  { title: "Services", url: "#services" },
-  { title: "Portfolio", url: "#portfolio" },
-  { title: "Contact", url: "#contact" },
+  { title: 'About', url: '#about' },
+  { title: 'Services', url: '#services' },
+  { title: 'Portfolio', url: '#portfolio' },
+  { title: 'Contact', url: '#contact' },
 ];
 
 export function HeroHeader() {
@@ -48,7 +49,9 @@ export function HeroHeader() {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-lg font-semibold">Anuj Sharma</span>
+              <Typography variant="h3" as="span">
+                Anuj Sharma
+              </Typography>
             </Link>
             <div className="flex items-center">
               <NavigationMenu>
@@ -67,7 +70,9 @@ export function HeroHeader() {
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-lg font-semibold">Anuj Sharma</span>
+              <Typography variant="h3" as="span">
+                Anuj Sharma
+              </Typography>
             </Link>
             <Sheet>
               <SheetTrigger asChild>
@@ -79,23 +84,27 @@ export function HeroHeader() {
                 <SheetHeader>
                   <SheetTitle>
                     <Link href="/" className="flex items-center gap-2">
-                      <span className="text-lg font-semibold">
+                      <Typography variant="h3" as="span">
                         Anuj Sharma
-                      </span>
+                      </Typography>
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="my-6 flex flex-col gap-6">
                   <div className="flex w-full flex-col gap-4">
                     {menu.map((item) => (
-                      <a key={item.title} href={item.url} className="font-semibold text-lg py-2">
+                      <a
+                        key={item.title}
+                        href={item.url}
+                        className="font-semibold text-lg py-2"
+                      >
                         {item.title}
                       </a>
                     ))}
                   </div>
-                  
+
                   <div className="flex flex-col gap-3">
-                     <Button asChild>
+                    <Button asChild>
                       <a href="#contact">Get in Touch</a>
                     </Button>
                   </div>
@@ -107,7 +116,7 @@ export function HeroHeader() {
       </div>
     </header>
   );
-};
+}
 
 const renderMenuItem = (item: MenuItem) => {
   return (

@@ -2,6 +2,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Typography } from '@/components/ui/typography';
 
 export function SimpleAiSystemSection() {
   const steps = [
@@ -43,13 +44,17 @@ export function SimpleAiSystemSection() {
     <section id="framework" className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
         <div className="text-center">
-          <h2 className="text-4xl font-medium lg:text-5xl">
+          <Typography variant="h2" as="h2">
             My 6-Step Framework for Automating Any Workflow
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
+          </Typography>
+          <Typography
+            variant="p"
+            as="p"
+            className="mx-auto mt-4 max-w-3xl text-muted-foreground"
+          >
             The S.I.M.P.L.E. AI System™ is the framework I use to build custom AI
             systems for marketing, education, and digital operations.
-          </p>
+          </Typography>
         </div>
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {steps.map((step) => (
@@ -61,9 +66,13 @@ export function SimpleAiSystemSection() {
                 <div className="flex size-12 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground text-2xl">
                   {step.letter}
                 </div>
-                <h3 className="text-xl font-semibold">{step.title}</h3>
+                <Typography variant="h3" as="h3">
+                  {step.title}
+                </Typography>
               </div>
-              <p className="text-muted-foreground">{step.description}</p>
+              <Typography variant="p" as="p" className="text-muted-foreground">
+                {step.description}
+              </Typography>
             </div>
           ))}
         </div>

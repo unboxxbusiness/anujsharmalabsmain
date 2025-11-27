@@ -16,9 +16,10 @@ import {
   IconBriefcase,
   IconCalendar,
   IconMail,
-  IconClipboardCheck
+  IconClipboardCheck,
 } from '@tabler/icons-react';
 import { Button } from './ui/button';
+import { Typography } from './ui/typography';
 
 export function SolutionsSection() {
   const features = [
@@ -46,25 +47,30 @@ export function SolutionsSection() {
       icon: <IconAdjustmentsBolt />,
     },
     {
-        title: "Workflow: Email Automation",
-        description: "Automate your email marketing and follow-up sequences.",
-        icon: <IconMail />,
+      title: 'Workflow: Email Automation',
+      description: 'Automate your email marketing and follow-up sequences.',
+      icon: <IconMail />,
     },
     {
-        title: "Framework: S.I.M.P.L.E. AI System™",
-        description: "The core framework for building any AI-powered workflow.",
-        icon: <IconCode />,
-    }
+      title: 'Framework: S.I.M.P.L.E. AI System™',
+      description: 'The core framework for building any AI-powered workflow.',
+      icon: <IconCode />,
+    },
   ];
   return (
     <section className="py-16 md:py-32">
-        <div className="max-w-5xl mx-auto px-6 mb-12 text-center">
-        <h2 className="text-4xl font-medium lg:text-5xl">
-            Explore Practical AI Workflows & Tutorials
-        </h2>
-        <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
-            A growing collection of resources designed to help you automate faster, create better, and work smarter — without complexity.
-        </p>
+      <div className="max-w-5xl mx-auto px-6 mb-12 text-center">
+        <Typography variant="h2" as="h2">
+          Explore Practical AI Workflows & Tutorials
+        </Typography>
+        <Typography
+          variant="p"
+          as="p"
+          className="text-muted-foreground mt-4 max-w-3xl mx-auto"
+        >
+          A growing collection of resources designed to help you automate
+          faster, create better, and work smarter — without complexity.
+        </Typography>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative z-10 py-10 max-w-7xl mx-auto">
         {features.map((feature, index) => (
@@ -93,9 +99,10 @@ const Feature = ({
     <div
       className={cn(
         'flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800',
-        (index === 0 || index === 3 || index === 6) && 'lg:border-l dark:border-neutral-800',
+        (index === 0 || index === 3 || index === 6) &&
+          'lg:border-l dark:border-neutral-800',
         index < 3 && 'lg:border-b dark:border-neutral-800',
-        index >=3 && 'lg:border-b dark:border-neutral-800'
+        index >= 3 && 'lg:border-b dark:border-neutral-800'
       )}
     >
       {index < 3 && (
@@ -109,13 +116,20 @@ const Feature = ({
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+        <Typography
+          variant="span"
+          className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100"
+        >
           {title}
-        </span>
+        </Typography>
       </div>
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+      <Typography
+        variant="p"
+        as="p"
+        className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10"
+      >
         {description}
-      </p>
+      </Typography>
     </div>
   );
 };

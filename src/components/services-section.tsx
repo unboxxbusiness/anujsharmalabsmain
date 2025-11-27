@@ -1,5 +1,6 @@
 'use client';
 import { Button } from '@/components/ui/button';
+import { Typography } from '@/components/ui/typography';
 import {
   Download,
   Library,
@@ -36,11 +37,17 @@ export function ServicesSection() {
   return (
     <section id="services" className="py-16 md:py-32 bg-slate-50">
       <div className="max-w-5xl mx-auto px-6 mb-12 text-center">
-        <h2 className="text-4xl font-medium lg:text-5xl">New? Start Here.</h2>
-        <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
+        <Typography variant="h2" as="h2">
+          New? Start Here.
+        </Typography>
+        <Typography
+          variant="p"
+          as="p"
+          className="text-muted-foreground mt-4 max-w-3xl mx-auto"
+        >
           If you’re beginning your AI journey, follow this simple path to get
           the maximum value and start building your first automated workflow.
-        </p>
+        </Typography>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
         {steps.map((step, index) => (
@@ -53,8 +60,12 @@ export function ServicesSection() {
                 {index + 1}
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                <Typography variant="h3" as="h3" className="mb-2">
+                  {step.title}
+                </Typography>
+                <Typography variant="p" as="p" className="text-muted-foreground">
+                  {step.description}
+                </Typography>
               </div>
             </div>
           </div>
