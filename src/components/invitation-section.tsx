@@ -37,6 +37,22 @@ export function InvitationSection() {
             Download Now <ArrowRight className="ml-2 size-4" />
           </Button>
         </div>
+        <div className="space-y-4 !mt-12">
+          <Typography
+            variant="p"
+            as="p"
+            className="text-xl font-semibold text-foreground"
+          >
+            AI isn’t the future — AI systems are.
+          </Typography>
+          <Typography
+            variant="p"
+            as="p"
+            className="text-xl font-semibold text-foreground"
+          >
+            Let’s build yours.
+          </Typography>
+        </div>
       </div>
     </section>
   );
