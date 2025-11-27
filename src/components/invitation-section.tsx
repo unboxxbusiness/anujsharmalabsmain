@@ -56,15 +56,15 @@ export function InvitationSection() {
             variant="h2"
             className="text-balance text-3xl font-semibold md:text-4xl !border-none"
           >
-            Let’s Build Your First AI System Together
+            Let’s Build Your First AI System
           </Typography>
           <Typography
             as="p"
             variant="p"
             className="text-muted-foreground mt-6"
           >
-            Whether you're starting small or planning a full transformation, we
-            can begin with a simple step.
+            You don’t need more tools. You need systems that simplify work,
+            remove chaos, and create clarity.
           </Typography>
         </div>
 
@@ -82,22 +82,6 @@ export function InvitationSection() {
           >
             <Download />
           </IntegrationCard>
-        </div>
-        <div className="text-center mt-12 space-y-4">
-          <Typography
-            variant="p"
-            as="p"
-            className="text-xl font-semibold text-foreground !mt-0"
-          >
-            AI isn’t the future — AI systems are.
-          </Typography>
-          <Typography
-            variant="p"
-            as="p"
-            className="text-xl font-semibold text-foreground !mt-0"
-          >
-            Let’s build yours.
-          </Typography>
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@ import { WhoThisIsForSection } from '@/components/who-this-is-for-section';
 import { ServicesOffersSection } from '@/components/services-offers-section';
 import { MyProcessSection } from '@/components/my-process-section';
 import { WhyWorkWithMeSection } from '@/components/why-work-with-me-section';
+import { InvitationSection } from '@/components/invitation-section';
 
 function WorkWithMeHeroSection() {
   return (
@@ -46,6 +47,7 @@ export default function WorkWithMePage() {
       <ServicesOffersSection />
       <MyProcessSection />
       <WhyWorkWithMeSection />
+      <InvitationSection />
     </main>
   );
 }
