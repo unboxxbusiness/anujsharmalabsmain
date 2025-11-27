@@ -1,6 +1,12 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Typography } from '@/components/ui/typography';
 import { Check } from 'lucide-react';
 
@@ -77,33 +83,48 @@ export function AllWorkflowsSection() {
             Browse All AI Workflows
           </Typography>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Tabs defaultValue={workflowCategories[0].title.toLowerCase()}>
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 h-auto">
+            {workflowCategories.map((category) => (
+              <TabsTrigger
+                key={category.title}
+                value={category.title.toLowerCase()}
+              >
+                {category.title}
+              </TabsTrigger>
+            ))}
+          </TabsList>
           {workflowCategories.map((category) => (
-            <Card key={category.title}>
-              <CardHeader>
-                <CardTitle>{category.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  {category.workflows.map((workflow) => (
-                    <li key={workflow} className="flex items-center gap-3">
-                      <div className="bg-primary/10 p-1.5 rounded-full">
-                        <Check className="size-4 text-primary" />
-                      </div>
-                      <Typography
-                        as="span"
-                        variant="body"
-                        className="text-foreground"
-                      >
-                        {workflow}
-                      </Typography>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            <TabsContent
+              key={category.title}
+              value={category.title.toLowerCase()}
+            >
+              <Card>
+                <CardHeader>
+                  <CardTitle>{category.title} Workflows</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                    {category.workflows.map((workflow) => (
+                      <li key={workflow} className="flex items-center gap-3">
+                        <div className="bg-primary/10 p-1.5 rounded-full">
+                          <Check className="size-4 text-primary" />
+                        </div>
+                        <Typography
+                          as="span"
+                          variant="body"
+                          className="text-foreground"
+                        >
+                          {workflow}
+                        </Typography>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </TabsContent>
           ))}
-        </div>
+        </Tabs>
       </div>
     </section>
   );
