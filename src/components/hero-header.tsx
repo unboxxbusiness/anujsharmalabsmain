@@ -42,7 +42,7 @@ const menu: MenuItem[] = [
   { title: 'Work With Me', url: '/work-with-me' },
   { title: 'AI Systems Library', url: '/ai-systems-library' },
   { title: 'Framework', url: '/framework' },
-  { title: 'Contact', url: '#contact' },
+  { title: 'Newsletter', url: '/newsletter' },
 ];
 
 export function HeroHeader() {

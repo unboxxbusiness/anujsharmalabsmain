@@ -18,7 +18,7 @@ export function Footer() {
       title: 'Navigation',
       links: [
         { label: 'Home', href: '/' },
-        { label: 'About', href: '#about-me' },
+        { label: 'About', href: '/about-us' },
         { label: 'Framework', href: '/framework' },
         { label: 'Work With Me', href: '/work-with-me' },
       ],
@@ -28,7 +28,7 @@ export function Footer() {
       links: [
         { label: 'AI Systems Library', href: '/ai-systems-library' },
         { label: 'Blog', href: '#' },
-        { label: 'Newsletter', href: '#newsletter' },
+        { label: 'Newsletter', href: '/newsletter' },
         { label: 'Free Resources', href: '#services' },
       ],
     },
