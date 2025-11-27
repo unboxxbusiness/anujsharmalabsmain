@@ -5,5 +5,12 @@
     "width": 760,
     "height": 590,
     "hint": "AI automation"
+  },
+  "resultsImage": {
+    "src": "https://picsum.photos/seed/results-chart/600/600",
+    "alt": "Chart showing positive results",
+    "width": 600,
+    "height": 600,
+    "hint": "results chart"
   }
 }
