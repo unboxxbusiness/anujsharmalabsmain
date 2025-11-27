@@ -23,8 +23,8 @@ export function FrameworkIntroSection() {
 
   return (
     <section className="py-16 md:py-24 bg-slate-50">
-      <div className="mx-auto max-w-3xl px-6 space-y-12">
-        <div className="space-y-6 text-center">
+      <div className="mx-auto max-w-5xl px-6 space-y-12">
+        <div className="space-y-6 text-center max-w-3xl mx-auto">
           <Typography as="h2" variant="h2" className="!border-none">
             A Practical, Actionable AI Framework for Real Teams
           </Typography>
@@ -36,7 +36,7 @@ export function FrameworkIntroSection() {
           </Typography>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 rounded-lg border p-8 bg-background">
           <div>
             <Typography
               as="h3"
@@ -66,7 +66,7 @@ export function FrameworkIntroSection() {
             >
               And it’s designed to be:
             </Typography>
-            <ul className="space-y-2 !mt-0">
+            <ul className="grid grid-cols-2 gap-y-2 !mt-0">
               {designPrinciples.map((item) => (
                 <li key={item} className="flex items-center gap-3">
                   <div className="bg-primary/10 p-1.5 rounded-full">
