@@ -37,8 +37,8 @@ interface MenuItem {
 
 const menu: MenuItem[] = [
   { title: 'About Us', url: '/about-us' },
-  { title: 'Services', url: '#services' },
-  { title: 'Portfolio', url: '#portfolio' },
+  { title: 'Work With Me', url: '/work-with-me' },
+  { title: 'AI Systems Library', url: '/ai-systems-library' },
   { title: 'Contact', url: '#contact' },
 ];
 
