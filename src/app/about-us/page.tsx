@@ -6,6 +6,7 @@ import { WhatIDoNowSection } from '@/components/what-i-do-now-section';
 import { SimpleAiSystemSection } from '@/components/simple-ai-system-section';
 import { MyMissionSection } from '@/components/my-mission-section';
 import { MyValuesSection } from '@/components/my-values-section';
+import { WhoIWorkWithSection } from '@/components/who-i-work-with-section';
 
 function AboutUsHeroSection() {
   return (
@@ -103,6 +104,7 @@ export default function AboutUsPage() {
       <SimpleAiSystemSection />
       <MyMissionSection />
       <MyValuesSection />
+      <WhoIWorkWithSection />
     </main>
   );
 }
