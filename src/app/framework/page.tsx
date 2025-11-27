@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FrameworkIntroSection } from '@/components/framework-intro-section';
 import { WhyFrameworkExistsSection } from '@/components/why-framework-exists-section';
 import { SimpleAiSystemSection } from '@/components/simple-ai-system-section';
+import { RealWorldApplicationsSection } from '@/components/real-world-applications-section';
 
 function FrameworkHeroSection() {
   return (
@@ -45,6 +46,7 @@ export default function FrameworkPage() {
       <FrameworkIntroSection />
       <WhyFrameworkExistsSection />
       <SimpleAiSystemSection />
+      <RealWorldApplicationsSection />
     </main>
   );
 }
