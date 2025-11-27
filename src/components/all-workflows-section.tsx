@@ -1,6 +1,6 @@
 'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Typography } from '@/components/ui/typography';
 import { Check } from 'lucide-react';
 
@@ -71,39 +71,39 @@ const workflowCategories = [
 export function AllWorkflowsSection() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="text-center mb-12">
           <Typography as="h2" variant="h2" className="!border-none">
             Browse All AI Workflows
           </Typography>
         </div>
-        <Tabs defaultValue={workflowCategories[0].title.toLowerCase()} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 h-auto">
-            {workflowCategories.map((category) => (
-              <TabsTrigger key={category.title} value={category.title.toLowerCase()}>
-                {category.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {workflowCategories.map((category) => (
-            <TabsContent key={category.title} value={category.title.toLowerCase()}>
-              <div className="py-8">
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+            <Card key={category.title}>
+              <CardHeader>
+                <CardTitle>{category.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-4">
                   {category.workflows.map((workflow) => (
                     <li key={workflow} className="flex items-center gap-3">
                       <div className="bg-primary/10 p-1.5 rounded-full">
                         <Check className="size-4 text-primary" />
                       </div>
-                      <Typography as="span" variant="body" className="text-foreground">
+                      <Typography
+                        as="span"
+                        variant="body"
+                        className="text-foreground"
+                      >
                         {workflow}
                       </Typography>
                     </li>
                   ))}
                 </ul>
-              </div>
-            </TabsContent>
+              </CardContent>
+            </Card>
           ))}
-        </Tabs>
+        </div>
       </div>
     </section>
   );
