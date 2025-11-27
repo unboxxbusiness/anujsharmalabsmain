@@ -33,7 +33,7 @@ export function WhyFrameworkExistsSection() {
         </div>
 
         <div className="w-full overflow-x-auto">
-          <table className="w-full min-w-max">
+          <table className="w-full">
             <thead>
               <tr className="border-b">
                 <th className="p-4 text-left font-semibold text-lg">The Problem</th>
