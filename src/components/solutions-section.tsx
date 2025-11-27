@@ -10,6 +10,7 @@ import {
 } from '@tabler/icons-react';
 import { Button } from './ui/button';
 import { Typography } from './ui/typography';
+import Link from 'next/link';
 
 export function SolutionsSection() {
   const features = [
@@ -68,7 +69,9 @@ export function SolutionsSection() {
         ))}
       </div>
       <div className="flex justify-center">
-        <Button>Explore All Workflows</Button>
+        <Button asChild>
+          <Link href="/ai-systems-library">Explore All Workflows</Link>
+        </Button>
       </div>
     </section>
   );

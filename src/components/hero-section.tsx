@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Typography } from '@/components/ui/typography';
+import Link from 'next/link';
 
 export function HeroSection() {
   return (
@@ -42,8 +43,8 @@ export function HeroSection() {
             <Typography variant="span" className="text-muted-foreground">
               Or
             </Typography>
-            <Button variant="link" className="p-0">
-              Explore the S.I.M.P.L.E. AI System™
+            <Button variant="link" className="p-0" asChild>
+              <Link href="#framework">Explore the S.I.M.P.L.E. AI System™</Link>
             </Button>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import Image from 'next/image';
 import placeholderImageData from '@/lib/placeholder-images.json';
+import Link from 'next/link';
 
 export function AboutMeSection() {
   const { aboutImage } = placeholderImageData;
@@ -40,7 +41,9 @@ export function AboutMeSection() {
                 <p className="text-muted-foreground">AI Systems Built</p>
               </div>
             </div>
-            <Button size="lg">Read My Story</Button>
+            <Button size="lg" asChild>
+              <Link href="/about-us">Read My Story</Link>
+            </Button>
           </div>
           <div className="relative">
             <Image

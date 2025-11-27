@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import { cn } from '@/lib/utils';
 import { Download, Library, Mail, PlayCircle } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 export function ServicesSection() {
@@ -60,7 +61,7 @@ export function ServicesSection() {
       </div>
       <div className="mt-12 text-center">
         <Button size="lg" asChild>
-          <a href="#">Start With the Free Guide</a>
+          <Link href="#">Start With the Free Guide</Link>
         </Button>
       </div>
     </section>

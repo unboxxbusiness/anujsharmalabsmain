@@ -63,7 +63,7 @@ export function HeroHeader() {
           </div>
           <div className="flex gap-2">
             <Button asChild size="sm">
-              <a href="#contact">Get in Touch</a>
+              <Link href="#contact">Get in Touch</Link>
             </Button>
           </div>
         </nav>
@@ -93,19 +93,19 @@ export function HeroHeader() {
                 <div className="my-6 flex flex-col gap-6">
                   <div className="flex w-full flex-col gap-4">
                     {menu.map((item) => (
-                      <a
+                      <Link
                         key={item.title}
                         href={item.url}
                         className="font-semibold text-lg py-2"
                       >
                         {item.title}
-                      </a>
+                      </Link>
                     ))}
                   </div>
 
                   <div className="flex flex-col gap-3">
                     <Button asChild>
-                      <a href="#contact">Get in Touch</a>
+                      <Link href="#contact">Get in Touch</Link>
                     </Button>
                   </div>
                 </div>
@@ -120,12 +120,12 @@ export function HeroHeader() {
 
 const renderMenuItem = (item: MenuItem) => {
   return (
-    <a
+    <Link
       key={item.title}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
       href={item.url}
+      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
     >
       {item.title}
-    </a>
+    </Link>
   );
 };
