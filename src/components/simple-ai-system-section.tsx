@@ -101,8 +101,8 @@ const steps = [
 export function SimpleAiSystemSection() {
   return (
     <section id="framework" className="py-16 md:py-32">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="text-center">
+      <div className="mx-auto max-w-7xl space-y-8 px-6 md:space-y-16">
+        <div className="text-center max-w-5xl mx-auto">
           <Typography variant="h2" as="h2">
             The S.I.M.P.L.E. AI System
           </Typography>
@@ -114,36 +114,39 @@ export function SimpleAiSystemSection() {
             A 6-step method to automate any workflow inside any team.
           </Typography>
         </div>
-        <div className="space-y-12">
-          {steps.map((step, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          {steps.map((step) => (
             <div
               key={step.title}
-              className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 items-start"
+              className="flex flex-col items-start"
             >
               <div className="flex items-start gap-4">
-                <div className="flex size-12 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground text-2xl">
+                <div className="flex size-12 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground text-2xl flex-shrink-0">
                   {step.letter}
                 </div>
+                <div className="space-y-1">
+                  <Typography variant="h3" as="h3" className="text-2xl">
+                    {step.title}
+                  </Typography>
+                  <Typography variant="p" as="p" className="text-lg text-muted-foreground !mt-1">
+                    {step.description}
+                  </Typography>
+                </div>
               </div>
-              <div className="space-y-4 pt-1">
-                <Typography variant="h3" as="h3" className='text-2xl'>
-                  {step.title}
-                </Typography>
-                <Typography variant="p" as="p" className="text-lg text-muted-foreground !mt-2">
-                  {step.description}
-                </Typography>
+
+              <div className="space-y-4 pt-6 pl-4 border-l-2 ml-6">
                 {step.details?.map((detail) => (
                   <Typography
                     key={detail}
                     variant="p"
                     as="p"
-                    className="text-muted-foreground !mt-4"
+                    className="text-muted-foreground !mt-0"
                   >
                     {detail}
                   </Typography>
                 ))}
                 {step.points && (
-                  <ul className="space-y-2 !mt-4">
+                  <ul className="space-y-2 !mt-2">
                     {step.points.map((point) => (
                       <li key={point} className="flex items-center gap-3">
                         <div className="bg-primary/10 p-1.5 rounded-full">
@@ -170,7 +173,7 @@ export function SimpleAiSystemSection() {
                     key={subPoint}
                     variant="p"
                     as="p"
-                    className="text-muted-foreground !mt-2"
+                    className="text-muted-foreground !mt-1"
                   >
                     {subPoint}
                   </Typography>
