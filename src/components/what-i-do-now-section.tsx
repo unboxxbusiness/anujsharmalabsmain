@@ -20,16 +20,18 @@ export function WhatIDoNowSection() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="mx-auto max-w-3xl px-6 space-y-6 md:space-y-8">
-        <Typography variant="h2" as="h2" className="text-center">
-          I Build AI Systems That Remove Chaos and Create Clarity
-        </Typography>
-        <Typography
-          variant="p"
-          as="p"
-          className="text-lg text-center text-muted-foreground"
-        >
-          Today, I help:
-        </Typography>
+        <div className="space-y-6 md:space-y-8">
+          <Typography variant="h2" as="h2" className="text-center">
+            I Build AI Systems That Remove Chaos and Create Clarity
+          </Typography>
+          <Typography
+            variant="p"
+            as="p"
+            className="text-lg text-center text-muted-foreground"
+          >
+            Today, I help:
+          </Typography>
+        </div>
 
         <ul className="space-y-4">
           {whoIHelp.map((item) => (
@@ -57,7 +59,7 @@ export function WhatIDoNowSection() {
               key={benefit}
               className="bg-background border rounded-lg p-4 text-center"
             >
-              <Typography variant="p" as="p" className="font-semibold">
+              <Typography variant="p" as="p" className="font-semibold !mt-0">
                 {benefit}
               </Typography>
             </div>
