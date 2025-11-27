@@ -2,21 +2,11 @@
 import { cn } from '@/lib/utils';
 import {
   IconAdjustmentsBolt,
-  IconCloud,
-  IconCurrencyDollar,
-  IconEaseInOut,
-  IconHeart,
-  IconHelp,
-  IconRouteAltLeft,
-  IconTerminal2,
-  IconRobot,
-  IconFileText,
-  IconUsers,
-  IconCode,
-  IconBriefcase,
   IconCalendar,
-  IconMail,
   IconClipboardCheck,
+  IconCode,
+  IconFileText,
+  IconMail,
 } from '@tabler/icons-react';
 import { Button } from './ui/button';
 import { Typography } from './ui/typography';
@@ -26,42 +16,42 @@ export function SolutionsSection() {
     {
       title: 'AI Content Engine Blueprint',
       description:
-        'A complete guide to building an automated content creation system.',
+        'Create 20–50 content pieces per month using simple AI workflows.',
       icon: <IconFileText />,
     },
     {
-      title: 'Workflow: Automated Content Calendar',
-      description: 'Plan and schedule your content with AI-driven automation.',
-      icon: <IconCalendar />,
-    },
-    {
-      title: 'Workflow: Meeting Notes → Tasks',
-      description:
-        'Automatically convert meeting transcripts into actionable tasks.',
-      icon: <IconClipboardCheck />,
-    },
-    {
-      title: 'Workflow: Research Summarizer',
-      description:
-        'Summarize long articles, reports, and research papers in seconds.',
+      title: 'Content Repurposing Automation',
+      description: 'Turn 1 video, blog, or script into 20+ pieces instantly.',
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: 'Workflow: Email Automation',
-      description: 'Automate your email marketing and follow-up sequences.',
+      title: 'Meeting Notes → Action Tasks Workflow',
+      description:
+        'Convert transcripts or notes into clean summaries, tasks & follow-ups.',
+      icon: <IconClipboardCheck />,
+    },
+    {
+      title: 'AI Research Assistant',
+      description:
+        'Summarize articles, PDFs, reports & web pages automatically.',
+      icon: <IconAdjustmentsBolt />,
+    },
+    {
+      title: 'Email Automation System',
+      description: 'Draft replies, templates & outreach emails in seconds.',
       icon: <IconMail />,
     },
     {
-      title: 'Framework: S.I.M.P.L.E. AI System™',
-      description: 'The core framework for building any AI-powered workflow.',
-      icon: <IconCode />,
+      title: 'Content Calendar Automation',
+      description: 'Generate 30 days of content in 15 minutes.',
+      icon: <IconCalendar />,
     },
   ];
   return (
     <section className="py-16 md:py-32">
       <div className="max-w-5xl mx-auto px-6 mb-12 text-center">
         <Typography variant="h2" as="h2">
-          Explore Practical AI Workflows & Tutorials
+          Most Popular AI Workflows
         </Typography>
         <Typography
           variant="p"
@@ -78,7 +68,7 @@ export function SolutionsSection() {
         ))}
       </div>
       <div className="flex justify-center">
-        <Button>Browse the Library</Button>
+        <Button>Explore All Workflows</Button>
       </div>
     </section>
   );
