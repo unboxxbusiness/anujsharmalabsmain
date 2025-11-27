@@ -5,6 +5,7 @@ import { Typography } from '@/components/ui/typography';
 import { IntroSection } from '@/components/intro-section';
 import { SolutionsSection } from '@/components/solutions-section';
 import { AllWorkflowsSection } from '@/components/all-workflows-section';
+import { ToolStackSection } from '@/components/tool-stack-section';
 
 function AiSystemsLibraryHeroSection() {
   return (
@@ -42,6 +43,7 @@ export default function AiSystemsLibraryPage() {
       <IntroSection />
       <SolutionsSection />
       <AllWorkflowsSection />
+      <ToolStackSection />
     </main>
   );
 }
