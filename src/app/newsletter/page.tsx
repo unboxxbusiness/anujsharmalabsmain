@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Typography } from '@/components/ui/typography';
+import { NewsletterAboutSection } from '@/components/newsletter-about-section';
 
 function NewsletterHeroSection() {
   return (
@@ -54,6 +55,7 @@ export default function NewsletterPage() {
   return (
     <main>
       <NewsletterHeroSection />
+      <NewsletterAboutSection />
     </main>
   );
 }
