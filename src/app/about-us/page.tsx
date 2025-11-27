@@ -2,6 +2,7 @@
 
 import { Check } from 'lucide-react';
 import { Typography } from '@/components/ui/typography';
+import { WhatIDoNowSection } from '@/components/what-i-do-now-section';
 
 function AboutUsHeroSection() {
   return (
@@ -95,6 +96,7 @@ export default function AboutUsPage() {
     <main>
       <AboutUsHeroSection />
       <OriginStorySection />
+      <WhatIDoNowSection />
     </main>
   );
 }
