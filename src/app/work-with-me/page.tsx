@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
+import { WhatIDoSection } from '@/components/what-i-do-section';
 
 function WorkWithMeHeroSection() {
   return (
@@ -36,6 +37,7 @@ export default function WorkWithMePage() {
   return (
     <main>
       <WorkWithMeHeroSection />
+      <WhatIDoSection />
     </main>
   );
 }
