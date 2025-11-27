@@ -39,6 +39,7 @@ const menu: MenuItem[] = [
   { title: 'About Us', url: '/about-us' },
   { title: 'Work With Me', url: '/work-with-me' },
   { title: 'AI Systems Library', url: '/ai-systems-library' },
+  { title: 'Framework', url: '/framework' },
   { title: 'Contact', url: '#contact' },
 ];
 

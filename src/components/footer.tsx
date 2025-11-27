@@ -19,7 +19,7 @@ export function Footer() {
       links: [
         { label: 'Home', href: '/' },
         { label: 'About', href: '#about-me' },
-        { label: 'Framework', href: '#framework' },
+        { label: 'Framework', href: '/framework' },
         { label: 'Work With Me', href: '/work-with-me' },
       ],
     },
