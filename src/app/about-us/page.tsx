@@ -5,6 +5,7 @@ import { Typography } from '@/components/ui/typography';
 import { WhatIDoNowSection } from '@/components/what-i-do-now-section';
 import { SimpleAiSystemSection } from '@/components/simple-ai-system-section';
 import { MyMissionSection } from '@/components/my-mission-section';
+import { MyValuesSection } from '@/components/my-values-section';
 
 function AboutUsHeroSection() {
   return (
@@ -101,6 +102,7 @@ export default function AboutUsPage() {
       <WhatIDoNowSection />
       <SimpleAiSystemSection />
       <MyMissionSection />
+      <MyValuesSection />
     </main>
   );
 }
