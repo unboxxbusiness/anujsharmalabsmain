@@ -13,73 +13,66 @@ import {
   IconFileText,
   IconUsers,
   IconCode,
-  IconBriefcase
+  IconBriefcase,
+  IconCalendar,
+  IconMail,
+  IconClipboardCheck
 } from '@tabler/icons-react';
 import { Button } from './ui/button';
 
 export function SolutionsSection() {
   const features = [
     {
-      title: 'AI Marketing Automation',
+      title: 'AI Content Engine Blueprint',
       description:
-        'Automate campaigns, reporting, and multi-step marketing tasks.',
-      icon: <IconRobot />,
-    },
-    {
-      title: 'AI Content Systems',
-      description: 'Create AI-powered content pipelines that scale output 3–5x.',
+        'A complete guide to building an automated content creation system.',
       icon: <IconFileText />,
     },
     {
-      title: 'CRM & Funnel Automation',
-      description:
-        'Fix follow-up speed, improve conversions, and eliminate manual lead handling.',
-      icon: <IconUsers />,
+      title: 'Workflow: Automated Content Calendar',
+      description: 'Plan and schedule your content with AI-driven automation.',
+      icon: <IconCalendar />,
     },
     {
-      title: 'No-Code Workflow Automation',
+      title: 'Workflow: Meeting Notes → Tasks',
       description:
-        'Connect your tools, sync your systems, and automate your operations.',
-      icon: <IconCode />,
+        'Automatically convert meeting transcripts into actionable tasks.',
+      icon: <IconClipboardCheck />,
     },
     {
-        title: "Corporate AI Training",
-        description: "Train your team to use AI effectively with proven workflows and templates.",
-        icon: <IconBriefcase />,
-      },
+      title: 'Workflow: Research Summarizer',
+      description:
+        'Summarize long articles, reports, and research papers in seconds.',
+      icon: <IconAdjustmentsBolt />,
+    },
+    {
+        title: "Workflow: Email Automation",
+        description: "Automate your email marketing and follow-up sequences.",
+        icon: <IconMail />,
+    },
+    {
+        title: "Framework: S.I.M.P.L.E. AI System™",
+        description: "The core framework for building any AI-powered workflow.",
+        icon: <IconCode />,
+    }
   ];
   return (
     <section className="py-16 md:py-32">
         <div className="max-w-5xl mx-auto px-6 mb-12 text-center">
         <h2 className="text-4xl font-medium lg:text-5xl">
-            Get AI Automation That Actually Works
+            Explore Practical AI Workflows & Tutorials
         </h2>
+        <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
+            A growing collection of resources designed to help you automate faster, create better, and work smarter — without complexity.
+        </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative z-10 py-10 max-w-7xl mx-auto">
         {features.map((feature, index) => (
           <Feature key={feature.title} {...feature} index={index} />
         ))}
-         <div
-            className={cn(
-                "flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800",
-            )}
-        >
-             <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
-                <IconHeart />
-            </div>
-            <div className="text-lg font-bold mb-2 relative z-10 px-10">
-                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
-                And so much more...
-                </span>
-            </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
-                Custom solutions to fit your unique business needs.
-            </p>
-        </div>
       </div>
       <div className="flex justify-center">
-        <Button>Explore Services</Button>
+        <Button>Browse the Library</Button>
       </div>
     </section>
   );
