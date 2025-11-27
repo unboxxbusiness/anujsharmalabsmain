@@ -4,6 +4,7 @@ import { Check } from 'lucide-react';
 import { Typography } from '@/components/ui/typography';
 import { WhatIDoNowSection } from '@/components/what-i-do-now-section';
 import { SimpleAiSystemSection } from '@/components/simple-ai-system-section';
+import { MyMissionSection } from '@/components/my-mission-section';
 
 function AboutUsHeroSection() {
   return (
@@ -99,6 +100,7 @@ export default function AboutUsPage() {
       <OriginStorySection />
       <WhatIDoNowSection />
       <SimpleAiSystemSection />
+      <MyMissionSection />
     </main>
   );
 }
