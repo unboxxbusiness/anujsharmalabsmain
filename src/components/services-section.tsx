@@ -11,26 +11,22 @@ export function ServicesSection() {
       title: 'Download the AI Workflow Guide',
       description: 'Get 7 plug-and-play workflows that save 5–10 hours weekly.',
       icon: <Download size={24} />,
-      number: 1,
     },
     {
       title: 'Watch the 3-Minute AI Intro Video',
       description: 'Understand exactly how simple, effective AI systems work.',
       icon: <PlayCircle size={24} />,
-      number: 2,
     },
     {
       title: 'Explore the AI Systems Library',
       description: 'Learn the workflows, tools & templates top teams use.',
       icon: <Library size={24} />,
-      number: 3,
     },
     {
       title: 'Join My Newsletter',
       description:
         'Weekly insights on workflow automation & content systems.',
       icon: <Mail size={24} />,
-      number: 4,
     },
   ];
 
@@ -49,26 +45,17 @@ export function ServicesSection() {
           the maximum value and start building your first automated workflow.
         </Typography>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
-        {steps.map((step) => (
-          <div
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
+        {steps.map((step, index) => (
+          <Feature
             key={step.title}
-            className="bg-white p-6 rounded-lg shadow-sm border flex"
-          >
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 text-3xl font-bold text-primary/20">
-                {step.number}
-              </div>
-              <div>
-                <Typography variant="h3" as="h3" className="mb-2">
-                  {step.title}
-                </Typography>
-                <Typography variant="p" as="p" className="text-muted-foreground">
-                  {step.description}
-                </Typography>
-              </div>
-            </div>
-          </div>
+            {...step}
+            index={index}
+            className={cn(
+              index === 0 && 'lg:border-l',
+              index === 3 && 'lg:border-r-0'
+            )}
+          />
         ))}
       </div>
       <div className="mt-12 text-center">
@@ -79,3 +66,49 @@ export function ServicesSection() {
     </section>
   );
 }
+
+const Feature = ({
+  title,
+  description,
+  icon,
+  index,
+  className,
+}: {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  index: number;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        'flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800',
+        'lg:border-b dark:border-neutral-800',
+        className
+      )}
+    >
+      <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+
+      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
+        {icon}
+      </div>
+      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
+        <Typography
+          variant="span"
+          className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100"
+        >
+          {title}
+        </Typography>
+      </div>
+      <Typography
+        variant="p"
+        as="p"
+        className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10"
+      >
+        {description}
+      </Typography>
+    </div>
+  );
+};
