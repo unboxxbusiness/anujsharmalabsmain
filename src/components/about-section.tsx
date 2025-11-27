@@ -1,62 +1,58 @@
 'use client';
 
-import { CheckCircle } from 'lucide-react';
-import Image from 'next/image';
+import { BrainCircuit, GraduationCap, Target } from 'lucide-react';
 
 export function AboutSection() {
-  const benefits = [
-    'Save 10–20 hours every week',
-    'Scale content without burnout',
-    'Fix broken funnels & follow-up gaps',
-    'Build workflows that run automatically',
-    'Operate faster with fewer mistakes',
+  const pillars = [
+    {
+      title: 'For Marketers',
+      description:
+        'Automate content creation, research, reporting & campaign workflows.',
+      icon: <Target className="size-8" />,
+    },
+    {
+      title: 'For Educators',
+      description:
+        'Streamline teaching, content development, communication & student support.',
+      icon: <GraduationCap className="size-8" />,
+    },
+    {
+      title: 'For Digital Teams',
+      description:
+        'Build clean, scalable systems that remove operational chaos.',
+      icon: <BrainCircuit className="size-8" />,
+    },
   ];
 
   return (
-    <section id="about" className="py-16 md:py-32">
+    <section id="about" className="py-16 md:py-32 bg-slate-50">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
-        <div className="relative z-10 max-w-xl space-y-6">
+        <div className="text-center">
           <h2 className="text-4xl font-medium lg:text-5xl">
-            Hi, I’m Anuj Sharma.
+            Simple AI Systems That Create Real Results
           </h2>
-          <p className="text-muted-foreground">
-            Digital Head at Amity University.
-            <br />
-            <span className="font-medium text-foreground">
-              AI Automation & Digital Marketing Specialist.
-            </span>
+          <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
+            Most teams don’t need more AI tools — they need better systems. I
+            design practical, plug-and-play AI workflows that reduce repetitive
+            work, improve team efficiency, and help organizations create more in
+            less time.
           </p>
         </div>
-        <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
-          <div>
-            <p className="text-muted-foreground">
-              I design simple, practical, high-impact AI automation systems that
-              help teams:
-            </p>
-            <div className="mb-12 mt-12 grid grid-cols-1 gap-6 md:mb-0">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="size-6 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-lg text-muted-foreground">
-                    {benefit}
-                  </span>
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-3">
+          {pillars.map((pillar) => (
+            <div
+              key={pillar.title}
+              className="rounded-lg border bg-white p-6 shadow-sm"
+            >
+              <div className="mb-4 flex items-center gap-4">
+                <div className="rounded-full bg-primary/10 p-3 text-primary">
+                  {pillar.icon}
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative">
-            <blockquote className="border-l-4 border-primary pl-4">
-              <p className="text-xl font-semibold leading-relaxed">
-                If you want AI to actually work for your marketing and
-                operations, you’re in the right place.
-              </p>
-              <div className="mt-6 space-y-3">
-                <cite className="block font-medium not-italic">
-                  Anuj Sharma
-                </cite>
+                <h3 className="text-xl font-semibold">{pillar.title}</h3>
               </div>
-            </blockquote>
-          </div>
+              <p className="text-muted-foreground">{pillar.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
