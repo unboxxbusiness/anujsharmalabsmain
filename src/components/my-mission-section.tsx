@@ -1,55 +1,81 @@
 'use client';
 
 import { Typography } from '@/components/ui/typography';
-import { Check } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import {
+  IconAdjustmentsBolt,
+  IconCloud,
+  IconEaseInOut,
+  IconHeart,
+  IconHelp,
+  IconTerminal2,
+} from '@tabler/icons-react';
+import React from 'react';
 
 export function MyMissionSection() {
   const beliefs = [
-    'AI should reduce work, not increase it',
-    'Simplicity beats complexity',
-    'Teams should feel empowered, not confused',
-    'Systems matter more than tools',
-    'Content should scale predictably, not painfully',
-    'Anyone can use AI the right way with the right framework',
+    {
+      title: 'Reduce Work',
+      description: 'AI should reduce work, not increase it.',
+      icon: <IconEaseInOut />,
+    },
+    {
+      title: 'Simplicity > Complexity',
+      description: 'Simplicity beats complexity, every time.',
+      icon: <IconAdjustmentsBolt />,
+    },
+    {
+      title: 'Empower Teams',
+      description: 'Teams should feel empowered, not confused.',
+      icon: <IconHeart />,
+    },
+    {
+      title: 'Systems > Tools',
+      description: 'Systems matter more than tools.',
+      icon: <IconTerminal2 />,
+    },
+    {
+      title: 'Predictable Scaling',
+      description: 'Content should scale predictably, not painfully.',
+      icon: <IconCloud />,
+    },
+    {
+      title: 'The Right Framework',
+      description: 'Anyone can use AI the right way with the right framework.',
+      icon: <IconHelp />,
+    },
   ];
 
   return (
     <section className="py-16 md:py-24 bg-background">
-      <div className="mx-auto max-w-3xl px-6 space-y-6 md:space-y-8">
-        <Typography variant="h2" as="h2" className="text-center">
-          AI Should Make Work Easier — Not Harder
-        </Typography>
-        <div className="space-y-6 text-lg text-muted-foreground">
-          <Typography variant="p" as="p">
-            Too many teams feel overwhelmed by AI. Too many companies chase shiny
-            tools, instead of building systems.
+      <div className="mx-auto max-w-7xl px-6 space-y-12">
+        <div className="text-center max-w-3xl mx-auto space-y-6">
+          <Typography variant="h2" as="h2" className="!border-none">
+            AI Should Make Work Easier — Not Harder
           </Typography>
-          <Typography
-            variant="p"
-            as="p"
-            className="text-xl font-semibold text-foreground text-center"
-          >
-            My mission is simple: Make AI usable, useful, and effective for
-            every team — especially non-technical ones.
-          </Typography>
-          <Typography variant="p" as="p">
-            I believe:
-          </Typography>
+          <div className="space-y-6 text-lg text-muted-foreground">
+            <Typography variant="p" as="p">
+              Too many teams feel overwhelmed by AI. Too many companies chase
+              shiny tools, instead of building systems.
+            </Typography>
+            <Typography
+              variant="p"
+              as="p"
+              className="text-xl font-semibold text-foreground"
+            >
+              My mission is simple: Make AI usable, useful, and effective for
+              every team — especially non-technical ones.
+            </Typography>
+          </div>
         </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-          {beliefs.map((belief) => (
-            <li key={belief} className="flex items-center gap-3">
-              <div className="bg-primary/10 p-1.5 rounded-full">
-                <Check className="size-4 text-primary" />
-              </div>
-              <Typography as="span" variant="body">
-                {belief}
-              </Typography>
-            </li>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10">
+          {beliefs.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
           ))}
-        </ul>
-        <div className="space-y-6 text-lg text-muted-foreground">
-          <Typography variant="p" as="p" className="text-center italic">
+        </div>
+        <div className="text-center">
+          <Typography variant="p" as="p" className="text-lg italic">
             This philosophy shapes every workflow I design.
           </Typography>
         </div>
@@ -57,3 +83,51 @@ export function MyMissionSection() {
     </section>
   );
 }
+
+const Feature = ({
+  title,
+  description,
+  icon,
+  index,
+}: {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  index: number;
+}) => {
+  return (
+    <div
+      className={cn(
+        'flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800',
+        index === 0 || index === 3 ? 'lg:border-l dark:border-neutral-800' : '',
+        index < 3 ? 'lg:border-b dark:border-neutral-800' : ''
+      )}
+    >
+      {index < 3 && (
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+      )}
+      {index >= 3 && (
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+      )}
+      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
+        {icon}
+      </div>
+      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
+        <Typography
+          variant="span"
+          className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100"
+        >
+          {title}
+        </Typography>
+      </div>
+      <Typography
+        variant="p"
+        as="p"
+        className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10"
+      >
+        {description}
+      </Typography>
+    </div>
+  );
+};
