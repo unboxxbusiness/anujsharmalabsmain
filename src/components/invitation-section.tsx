@@ -24,7 +24,7 @@ export function InvitationSection() {
             variant="h2"
             className="text-balance font-semibold !border-none"
           >
-            Want Your Own S.I.M.P.L.E. AI System™ Built for Your Team?
+            Want Your Own S.I.M.P.L.E. AI System Built for Your Team?
           </Typography>
           <Typography
             as="p"
