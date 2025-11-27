@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import { WhatIDoSection } from '@/components/what-i-do-section';
 import { WhoThisIsForSection } from '@/components/who-this-is-for-section';
+import { ServicesOffersSection } from '@/components/services-offers-section';
 
 function WorkWithMeHeroSection() {
   return (
@@ -40,6 +41,7 @@ export default function WorkWithMePage() {
       <WorkWithMeHeroSection />
       <WhatIDoSection />
       <WhoThisIsForSection />
+      <ServicesOffersSection />
     </main>
   );
 }
