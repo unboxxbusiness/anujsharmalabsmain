@@ -44,7 +44,7 @@ const menu: MenuItem[] = [
 export function HeroHeader() {
   return (
     <header className="py-4 bg-background/80 backdrop-blur-sm fixed top-0 left-0 w-full z-50">
-      <div className="container mx-auto">
+      <div className="max-w-7xl mx-auto px-4">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2">
