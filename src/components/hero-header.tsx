@@ -36,7 +36,7 @@ interface MenuItem {
 }
 
 const menu: MenuItem[] = [
-  { title: 'About', url: '#about' },
+  { title: 'About Us', url: '/about-us' },
   { title: 'Services', url: '#services' },
   { title: 'Portfolio', url: '#portfolio' },
   { title: 'Contact', url: '#contact' },
