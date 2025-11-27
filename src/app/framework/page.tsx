@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import Link from 'next/link';
 import { FrameworkIntroSection } from '@/components/framework-intro-section';
+import { WhyFrameworkExistsSection } from '@/components/why-framework-exists-section';
 
 function FrameworkHeroSection() {
   return (
@@ -41,6 +42,7 @@ export default function FrameworkPage() {
     <main>
       <FrameworkHeroSection />
       <FrameworkIntroSection />
+      <WhyFrameworkExistsSection />
     </main>
   );
 }
