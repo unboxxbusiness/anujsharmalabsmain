@@ -45,7 +45,7 @@ export function SimpleAiSystemSection() {
       <div className="mx-auto max-w-7xl space-y-8 px-6 md:space-y-12">
         <div className="text-center">
           <Typography variant="h2" as="h2">
-            The S.I.M.P.L.E. AI System™
+            The S.I.M.P.L.E. AI System
           </Typography>
           <Typography
             variant="p"

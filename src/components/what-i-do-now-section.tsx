@@ -42,7 +42,7 @@ export function WhatIDoNowSection() {
           <Typography variant="p" as="p" className="text-muted-foreground !mt-4">
             Today, I help marketers, educators, and digital teams build
             powerful AI-powered systems using my proprietary S.I.M.P.L.E. AI
-            System™ to design automation that anyone can operate from Day 1.
+            System to design automation that anyone can operate from Day 1.
           </Typography>
         </div>
 

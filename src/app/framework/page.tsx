@@ -14,7 +14,7 @@ function FrameworkHeroSection() {
           as="h1"
           className="max-w-[850px] text-center mx-auto"
         >
-          The S.I.M.P.L.E. AI System™
+          The S.I.M.P.L.E. AI System
         </Typography>
 
         <Typography

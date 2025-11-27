@@ -30,7 +30,7 @@ export function FrameworkIntroSection() {
           </Typography>
           <Typography as="p" variant="p" className="text-lg text-muted-foreground">
             Most teams struggle with AI because they focus on tools, not
-            systems. The S.I.M.P.L.E. AI System™ fixes this by turning AI into
+            systems. The S.I.M.P.L.E. AI System fixes this by turning AI into
             clear, repeatable workflows that save time, eliminate chaos, and
             increase output.
           </Typography>

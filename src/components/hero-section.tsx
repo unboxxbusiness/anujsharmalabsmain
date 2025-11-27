@@ -44,7 +44,7 @@ export function HeroSection() {
               Or
             </Typography>
             <Button variant="link" className="p-0" asChild>
-              <Link href="#framework">Explore the S.I.M.P.L.E. AI System™</Link>
+              <Link href="#framework">Explore the S.I.M.P.L.E. AI System</Link>
             </Button>
           </div>
         </div>

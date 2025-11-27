@@ -60,7 +60,7 @@ export function MyProcessSection() {
             as="p"
             className="text-lg text-muted-foreground mt-4"
           >
-            I follow my proprietary S.I.M.P.L.E. AI System™, a 6-step method to
+            I follow my proprietary S.I.M.P.L.E. AI System, a 6-step method to
             build clean, scalable workflows.
           </Typography>
         </div>
