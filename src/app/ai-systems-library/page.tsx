@@ -7,6 +7,7 @@ import { SolutionsSection } from '@/components/solutions-section';
 import { AllWorkflowsSection } from '@/components/all-workflows-section';
 import { ToolStackSection } from '@/components/tool-stack-section';
 import { TemplatesSection } from '@/components/templates-section';
+import { HowToUseSection } from '@/components/how-to-use-section';
 
 function AiSystemsLibraryHeroSection() {
   return (
@@ -46,6 +47,7 @@ export default function AiSystemsLibraryPage() {
       <AllWorkflowsSection />
       <ToolStackSection />
       <TemplatesSection />
+      <HowToUseSection />
     </main>
   );
 }
