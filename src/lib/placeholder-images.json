@@ -19,5 +19,12 @@
     "width": 1280,
     "height": 400,
     "hint": "team working"
+  },
+  "newsletterCtaImage": {
+    "src": "https://picsum.photos/seed/newsletter-cta/1207/929",
+    "alt": "Newsletter concept illustration",
+    "width": 1207,
+    "height": 929,
+    "hint": "newsletter concept"
   }
 }
