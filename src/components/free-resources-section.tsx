@@ -66,7 +66,7 @@ export function FreeResourcesSection() {
         </div>
         <div className="text-center">
           <Button size="lg" asChild>
-            <Link href="#">Download the AI Workflow Guide</Link>
+            <Link href="/ai-systems-library">Download the AI Workflow Guide</Link>
           </Button>
         </div>
       </div>

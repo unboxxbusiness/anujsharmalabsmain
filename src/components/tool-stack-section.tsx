@@ -10,6 +10,7 @@ import {
   IconSchool,
 } from '@tabler/icons-react';
 import React from 'react';
+import Link from 'next/link';
 
 const toolCategories = [
   {
@@ -54,7 +55,9 @@ export function ToolStackSection() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Button size="lg">See My Full Tool Stack</Button>
+          <Button size="lg" asChild>
+            <Link href="/free-resources">See My Full Tool Stack</Link>
+          </Button>
         </div>
       </div>
     </section>

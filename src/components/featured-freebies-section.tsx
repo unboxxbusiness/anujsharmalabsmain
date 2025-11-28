@@ -22,7 +22,7 @@ const freebies = [
       '7 plug-and-play workflows that automate content, reporting, communication & more.',
     icon: <IconBook />,
     cta: 'Download Guide',
-    href: '#',
+    href: '/ai-systems-library',
   },
   {
     title: 'Content Engine Blueprint',
@@ -30,21 +30,21 @@ const freebies = [
       'A simple system to create 20–50 content pieces per month using AI.',
     icon: <IconEngine />,
     cta: 'Get Blueprint',
-    href: '#',
+    href: '/ai-systems-library',
   },
   {
     title: 'Content Repurposing Checklist',
     description: 'Turn a single piece of content into 20+ assets automatically.',
     icon: <IconRepeat />,
     cta: 'Download Checklist',
-    href: '#',
+    href: '/free-resources',
   },
   {
     title: 'Meeting Notes → Tasks Automation Template',
     description: 'Instant summaries, action items & follow-ups.',
     icon: <IconListCheck />,
     cta: 'Get Template',
-    href: '#',
+    href: '/free-resources',
   },
   {
     title: 'AI Prompt Library',
@@ -52,14 +52,14 @@ const freebies = [
       '30+ ready-made prompts for marketing, content, and education workflows.',
     icon: <IconFileText />,
     cta: 'Download Prompts',
-    href: '#',
+    href: '/free-resources',
   },
   {
     title: 'S.I.M.P.L.E. AI System™ Overview',
     description: 'Your 6-step framework for building any AI workflow.',
     icon: <IconHelp />,
     cta: 'Learn the Framework',
-    href: '#',
+    href: '/framework',
   },
 ];
 

@@ -70,7 +70,7 @@ export function FinalInvitationSection() {
           at a time.
         </Typography>
         <Button size="lg" className="mt-8" asChild>
-          <Link href="#">Join the Newsletter</Link>
+          <Link href="/newsletter">Join the Newsletter</Link>
         </Button>
       </div>
     </section>

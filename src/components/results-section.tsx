@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Typography } from './ui/typography';
 import Image from 'next/image';
 import placeholderImageData from '@/lib/placeholder-images.json';
+import Link from 'next/link';
 
 export function ResultsSection() {
   const { resultsImage } = placeholderImageData;
@@ -39,8 +40,8 @@ export function ResultsSection() {
               </li>
             ))}
           </ul>
-          <Button size="lg" className="mt-10 max-w-xs" disabled>
-            See Case Studies
+          <Button size="lg" className="mt-10 max-w-xs" asChild>
+            <Link href="/blog">See Case Studies</Link>
           </Button>
         </div>
         <div className="relative flex items-center justify-center">

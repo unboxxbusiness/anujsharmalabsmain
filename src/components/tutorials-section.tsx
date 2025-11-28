@@ -66,7 +66,7 @@ export function TutorialsSection() {
         </div>
         <div className="text-center">
           <Button size="lg" asChild>
-            <Link href="#">See All Tutorials</Link>
+            <Link href="/blog">See All Tutorials</Link>
           </Button>
         </div>
       </div>

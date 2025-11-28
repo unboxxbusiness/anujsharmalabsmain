@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import { cn } from '@/lib/utils';
 import { Check, Bot, BookOpen, PenTool, Users } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 export function WorkWithMeSection() {
@@ -55,7 +56,9 @@ export function WorkWithMeSection() {
           ))}
         </div>
         <div className="text-center">
-          <Button size="lg">Book the Free AI Workflow Audit</Button>
+          <Button size="lg" asChild>
+            <Link href="/work-with-me">Book the Free AI Workflow Audit</Link>
+          </Button>
         </div>
       </div>
     </section>

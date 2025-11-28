@@ -29,7 +29,7 @@ const contactOptions = [
     contact: {
       type: 'button',
       text: 'Book a Free AI Workflow Audit',
-      href: '#',
+      href: '/work-with-me',
       icon: <Calendar className="size-4 mr-2" />,
     },
     subtext: 'I’ll map out 1–2 workflows your team can automate immediately.',

@@ -34,7 +34,7 @@ function FrameworkHeroSection() {
         </Typography>
         <div className="mt-8 flex justify-center">
           <Button size="lg" asChild>
-            <Link href="#">Download the Free AI Workflow Guide</Link>
+            <Link href="/free-resources">Download the Free AI Workflow Guide</Link>
           </Button>
         </div>
       </div>

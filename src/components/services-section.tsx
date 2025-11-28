@@ -12,22 +12,26 @@ export function ServicesSection() {
       title: 'Download the AI Workflow Guide',
       description: 'Get 7 plug-and-play workflows that save 5–10 hours weekly.',
       icon: <Download size={24} />,
+      href: '/ai-systems-library',
     },
     {
       title: 'Watch the 3-Minute AI Intro Video',
       description: 'Understand exactly how simple, effective AI systems work.',
       icon: <PlayCircle size={24} />,
+      href: '/about-us',
     },
     {
       title: 'Explore the AI Systems Library',
       description: 'Learn the workflows, tools & templates top teams use.',
       icon: <Library size={24} />,
+      href: '/ai-systems-library',
     },
     {
       title: 'Join My Newsletter',
       description:
         'Weekly insights on workflow automation & content systems.',
       icon: <Mail size={24} />,
+      href: '/newsletter',
     },
   ];
 
@@ -48,20 +52,21 @@ export function ServicesSection() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
         {steps.map((step, index) => (
-          <Feature
-            key={step.title}
-            {...step}
-            index={index}
-            className={cn(
-              index === 0 && 'lg:border-l',
-              index === 3 && 'lg:border-r-0'
-            )}
-          />
+          <Link href={step.href} key={step.title}>
+            <Feature
+              {...step}
+              index={index}
+              className={cn(
+                index === 0 && 'lg:border-l',
+                index === 3 && 'lg:border-r-0'
+              )}
+            />
+          </Link>
         ))}
       </div>
       <div className="mt-12 text-center">
         <Button size="lg" asChild>
-          <Link href="#">Start With the Free Guide</Link>
+          <Link href="/ai-systems-library">Start With the Free Guide</Link>
         </Button>
       </div>
     </section>
@@ -84,7 +89,7 @@ const Feature = ({
   return (
     <div
       className={cn(
-        'flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800',
+        'flex flex-col lg:border-r py-10 relative group/feature dark:border-neutral-800 h-full',
         'lg:border-b dark:border-neutral-800',
         className
       )}
