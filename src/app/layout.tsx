@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Anuj Sharma | AI Automation & Digital Marketing',
   description:
     'Anuj Sharma helps marketers, educators, and digital teams build AI-powered workflows that replace manual work with smart automation.',
+  icons: {
+    icon: 'https://res.cloudinary.com/dhrigocvd/image/upload/v1764314636/logo_as_icon_z4bwnc.png',
+  },
 };
 
 export default function RootLayout({
