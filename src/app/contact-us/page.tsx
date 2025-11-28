@@ -3,6 +3,7 @@
 import { ContactIntroSection } from '@/components/contact-intro-section';
 import { ContactOptionsSection } from '@/components/contact-options-section';
 import { Typography } from '@/components/ui/typography';
+import { ContactFormSection } from '@/components/contact-form-section';
 
 function ContactUsHeroSection() {
   return (
@@ -35,6 +36,7 @@ export default function ContactUsPage() {
       <ContactUsHeroSection />
       <ContactIntroSection />
       <ContactOptionsSection />
+      <ContactFormSection />
     </main>
   );
 }
