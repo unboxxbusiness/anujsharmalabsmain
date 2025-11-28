@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import Link from 'next/link';
 import { FreeResourcesIntroSection } from '@/components/free-resources-intro-section';
+import { FeaturedFreebiesSection } from '@/components/featured-freebies-section';
 
 function FreeResourcesHeroSection() {
   return (
@@ -41,6 +42,7 @@ export default function FreeResourcesPage() {
     <main>
       <FreeResourcesHeroSection />
       <FreeResourcesIntroSection />
+      <FeaturedFreebiesSection />
     </main>
   );
 }
