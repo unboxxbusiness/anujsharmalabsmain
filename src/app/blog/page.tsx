@@ -1,5 +1,6 @@
 'use client';
 
+import { BlogCategoriesSection } from '@/components/blog-categories-section';
 import { Typography } from '@/components/ui/typography';
 
 function BlogHeroSection() {
@@ -32,6 +33,7 @@ export default function BlogPage() {
   return (
     <main>
       <BlogHeroSection />
+      <BlogCategoriesSection />
     </main>
   );
 }
