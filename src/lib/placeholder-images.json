@@ -14,11 +14,11 @@
     "hint": "AI results"
   },
   "freeResourcesImage": {
-    "src": "https://picsum.photos/seed/resources-page/1280/400",
-    "alt": "Team working together",
+    "src": "https://res.cloudinary.com/dhrigocvd/image/upload/v1764318692/AI_System_free_resources_xbcrln.png",
+    "alt": "AI System Free Resources",
     "width": 1280,
     "height": 400,
-    "hint": "team working"
+    "hint": "AI resources"
   },
   "newsletterCtaImage": {
     "src": "https://picsum.photos/seed/newsletter-cta/1207/929",
