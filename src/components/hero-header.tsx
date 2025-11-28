@@ -1,4 +1,5 @@
-"use client";
+
+'use client';
 import {
   Navbar,
   NavBody,
@@ -8,49 +9,55 @@ import {
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
-import { useState } from "react";
-import Link from "next/link";
-import { Typography } from "@/components/ui/typography";
+} from '@/components/ui/resizable-navbar';
+import { useState } from 'react';
+import Link from 'next/link';
+import { Typography } from '@/components/ui/typography';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
-import Image from "next/image";
+} from '@/components/ui/dropdown-menu';
+import { ChevronDown } from 'lucide-react';
+import Image from 'next/image';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 export function HeroHeader() {
   const menu = [
-    { title: "About", url: "/about-us" },
+    { title: 'About', url: '/about-us' },
     {
-      title: "Resources",
+      title: 'Resources',
       items: [
         {
-          title: "AI Systems Library",
-          url: "/ai-systems-library",
+          title: 'AI Systems Library',
+          url: '/ai-systems-library',
         },
         {
-          title: "Framework",
-          url: "/framework",
+          title: 'Framework',
+          url: '/framework',
         },
         {
-          title: "Free Resources",
-          url: "/free-resources",
+          title: 'Free Resources',
+          url: '/free-resources',
         },
         {
-          title: "Blog",
-          url: "/blog",
+          title: 'Blog',
+          url: '/blog',
         },
         {
-          title: "Newsletter",
-          url: "/newsletter",
+          title: 'Newsletter',
+          url: '/newsletter',
         },
       ],
     },
-    { title: "Work With Me", url: "/work-with-me" },
-    { title: "Contact", url: "/contact-us" },
+    { title: 'Work With Me', url: '/work-with-me' },
+    { title: 'Contact', url: '/contact-us' },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -92,7 +99,7 @@ export function HeroHeader() {
               >
                 {item.title}
               </Link>
-            )
+            ),
           )}
         </div>
         <div className="flex items-center gap-4">
@@ -124,40 +131,45 @@ export function HeroHeader() {
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
         >
-          {menu.flatMap((item) =>
-            item.items
-              ? [
-                  <Typography
-                    key={item.title}
-                    variant="h4"
-                    as="h4"
-                    className="px-4 font-semibold"
-                  >
+          <Accordion type="multiple" className="w-full">
+            {menu.map((item) =>
+              item.items ? (
+                <AccordionItem
+                  value={item.title}
+                  key={item.title}
+                  className="border-b-0"
+                >
+                  <AccordionTrigger className="relative text-neutral-600 dark:text-neutral-300 px-4 py-2 text-base font-normal hover:no-underline">
                     {item.title}
-                  </Typography>,
-                  ...item.items.map((subItem) => (
-                    <Link
-                      key={subItem.title}
-                      href={subItem.url}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="relative text-neutral-600 dark:text-neutral-300 px-8 py-2"
-                    >
-                      <span className="block">{subItem.title}</span>
-                    </Link>
-                  )),
-                ]
-              : [
-                  <Link
-                    key={item.title}
-                    href={item.url!}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="relative text-neutral-600 dark:text-neutral-300 px-4 py-2"
-                  >
-                    <span className="block">{item.title}</span>
-                  </Link>,
-                ]
-          )}
-          <div className="flex w-full flex-col gap-4 mt-4">
+                  </AccordionTrigger>
+                  <AccordionContent className="pl-8 pb-0">
+                    <div className="flex flex-col gap-2">
+                      {item.items.map((subItem) => (
+                        <Link
+                          key={subItem.title}
+                          href={subItem.url}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="relative text-neutral-600 dark:text-neutral-300 py-2"
+                        >
+                          <span className="block">{subItem.title}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ) : (
+                <Link
+                  key={item.title}
+                  href={item.url!}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="relative block text-neutral-600 dark:text-neutral-300 px-4 py-2"
+                >
+                  <span className="block">{item.title}</span>
+                </Link>
+              ),
+            )}
+          </Accordion>
+          <div className="flex w-full flex-col gap-4 mt-4 px-4">
             <NavbarButton
               onClick={() => setIsMobileMenuOpen(false)}
               className="w-full"
