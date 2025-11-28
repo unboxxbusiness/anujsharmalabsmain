@@ -44,6 +44,7 @@ const menu: MenuItem[] = [
   { title: 'Framework', url: '/framework' },
   { title: 'Newsletter', url: '/newsletter' },
   { title: 'Blog', url: '/blog' },
+  { title: 'Contact Us', url: '/contact-us' },
 ];
 
 export function HeroHeader() {
@@ -71,7 +72,7 @@ export function HeroHeader() {
           </div>
           <div className="flex gap-2">
             <Button asChild size="sm">
-              <Link href="#contact">Get in Touch</Link>
+              <Link href="/contact-us">Get in Touch</Link>
             </Button>
           </div>
         </nav>
@@ -118,7 +119,7 @@ export function HeroHeader() {
 
                   <div className="flex flex-col gap-3">
                     <Button asChild>
-                      <Link href="#contact" onClick={closeMobileMenu}>
+                      <Link href="/contact-us" onClick={closeMobileMenu}>
                         Get in Touch
                       </Link>
                     </Button>

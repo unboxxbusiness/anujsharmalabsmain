@@ -93,6 +93,9 @@ export function Footer() {
               <Link href="/work-with-me" className="block transition-colors hover:text-primary">
                 Work With Me
               </Link>
+              <Link href="/contact-us" className="block transition-colors hover:text-primary">
+                Contact Us
+              </Link>
             </address>
           </div>
           <div className="relative">
