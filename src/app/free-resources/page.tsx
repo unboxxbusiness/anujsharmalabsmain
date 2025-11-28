@@ -5,6 +5,7 @@ import { Typography } from '@/components/ui/typography';
 import Link from 'next/link';
 import { FreeResourcesIntroSection } from '@/components/free-resources-intro-section';
 import { FeaturedFreebiesSection } from '@/components/featured-freebies-section';
+import { WorkflowTemplatesSection } from '@/components/workflow-templates-section';
 
 function FreeResourcesHeroSection() {
   return (
@@ -43,6 +44,7 @@ export default function FreeResourcesPage() {
       <FreeResourcesHeroSection />
       <FreeResourcesIntroSection />
       <FeaturedFreebiesSection />
+      <WorkflowTemplatesSection />
     </main>
   );
 }
