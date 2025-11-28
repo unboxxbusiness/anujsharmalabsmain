@@ -21,7 +21,6 @@ import {
 } from '@/components/ui/navigation-menu';
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -75,12 +74,12 @@ const resourcesMenuItems: MenuItem[] = [
 
 const menu: MenuItem[] = [
   { title: 'About', url: '/about-us' },
-  { title: 'Work With Me', url: '/work-with-me' },
   {
     title: 'Resources',
     url: '#',
     items: resourcesMenuItems,
   },
+  { title: 'Work With Me', url: '/work-with-me' },
   { title: 'Contact', url: '/contact-us' },
 ];
 
@@ -141,8 +140,11 @@ export function HeroHeader() {
                                 key={component.title}
                                 title={component.title}
                                 href={component.url}
+                                asChild
                               >
-                                {component.description}
+                                <Link href={component.url}>
+                                  {component.description}
+                                </Link>
                               </ListItem>
                             ))}
                           </ul>
@@ -250,9 +252,11 @@ export function HeroHeader() {
 const renderMenuItem = (item: MenuItem) => {
   return (
     <NavigationMenuItem key={item.title}>
-      <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-        <Link href={item.url}>{item.title}</Link>
-      </NavigationMenuLink>
+      <Link href={item.url} legacyBehavior passHref>
+        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          {item.title}
+        </NavigationMenuLink>
+      </Link>
     </NavigationMenuItem>
   );
 };
