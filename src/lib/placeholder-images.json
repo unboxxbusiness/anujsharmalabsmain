@@ -1,10 +1,10 @@
 {
   "aboutImage": {
-    "src": "https://picsum.photos/seed/backend-user/760/590",
-    "alt": "AI automation concept",
-    "width": 760,
+    "src": "https://res.cloudinary.com/dhrigocvd/image/upload/v1764317322/Anuj_Sharma_xyqv5k.png",
+    "alt": "Anuj Sharma",
+    "width": 590,
     "height": 590,
-    "hint": "AI automation"
+    "hint": "portrait professional"
   },
   "resultsImage": {
     "src": "https://picsum.photos/seed/results-chart/600/600",
