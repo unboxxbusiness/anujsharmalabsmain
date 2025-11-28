@@ -7,11 +7,11 @@
     "hint": "portrait professional"
   },
   "resultsImage": {
-    "src": "https://picsum.photos/seed/results-chart/600/600",
-    "alt": "Chart showing positive results",
+    "src": "https://res.cloudinary.com/dhrigocvd/image/upload/v1764317499/Gemini_Generated_Image_kf48z0kf48z0kf48_bbabfm.png",
+    "alt": "AI-generated image showing results",
     "width": 600,
     "height": 600,
-    "hint": "results chart"
+    "hint": "AI results"
   },
   "freeResourcesImage": {
     "src": "https://picsum.photos/seed/resources-page/1280/400",
