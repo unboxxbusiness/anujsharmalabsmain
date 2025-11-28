@@ -8,6 +8,8 @@ import { MyMissionSection } from '@/components/my-mission-section';
 import { MyValuesSection } from '@/components/my-values-section';
 import { WhoIWorkWithSection } from '@/components/who-i-work-with-section';
 import { InvitationSection } from '@/components/invitation-section';
+import Image from 'next/image';
+import placeholderImageData from '@/lib/placeholder-images.json';
 
 function AboutUsHeroSection() {
   return (
@@ -37,6 +39,7 @@ function AboutUsHeroSection() {
 }
 
 function OriginStorySection() {
+  const { originStoryImage } = placeholderImageData;
   const benefits = [
     'Work became faster',
     'Content scaled effortlessly',
@@ -78,6 +81,14 @@ function OriginStorySection() {
             </Typography>
           </div>
         </div>
+        <Image
+          src={originStoryImage.src}
+          alt={originStoryImage.alt}
+          width={originStoryImage.width}
+          height={originStoryImage.height}
+          data-ai-hint={originStoryImage.hint}
+          className="rounded-lg object-cover"
+        />
 
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
           {benefits.map((benefit) => (

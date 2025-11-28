@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import { Typography } from '@/components/ui/typography';
 import React from 'react';
+import Image from 'next/image';
+import placeholderImageData from '@/lib/placeholder-images.json';
 
 const Integration = ({
   icon,
@@ -36,6 +38,7 @@ const Integration = ({
 };
 
 export function IntroSection() {
+  const { aiLibraryImage } = placeholderImageData;
   const benefits = [
     {
       icon: <Lightbulb />,
@@ -94,16 +97,14 @@ export function IntroSection() {
 
           <div className="-mx-6 px-6 [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_70%,transparent_100%)] sm:mx-auto sm:max-w-md md:-mx-6 md:ml-auto md:mr-0">
             <div className="bg-background dark:bg-muted/50 rounded-2xl border p-3 shadow-lg md:pb-12">
-              <div className="grid grid-cols-2 gap-2">
-                {benefits.map((benefit) => (
-                  <Integration
-                    key={benefit.name}
-                    icon={benefit.icon}
-                    name={benefit.name}
-                    description={benefit.description}
-                  />
-                ))}
-              </div>
+              <Image
+                src={aiLibraryImage.src}
+                alt={aiLibraryImage.alt}
+                width={aiLibraryImage.width}
+                height={aiLibraryImage.height}
+                data-ai-hint={aiLibraryImage.hint}
+                className="rounded-lg object-cover"
+              />
             </div>
           </div>
         </div>

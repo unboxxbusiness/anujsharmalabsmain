@@ -2,18 +2,20 @@
 
 import { Typography } from '@/components/ui/typography';
 import Image from 'next/image';
+import placeholderImageData from '@/lib/placeholder-images.json';
 
 export function NewsletterAboutSection() {
+  const { newsletterAboutImage } = placeholderImageData;
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
         <Image
           className="rounded-lg grayscale"
-          src="https://picsum.photos/seed/newsletter-about/1280/400"
-          alt="Person writing in a notebook"
-          width={1280}
-          height={400}
-          data-ai-hint="writing notebook"
+          src={newsletterAboutImage.src}
+          alt={newsletterAboutImage.alt}
+          width={newsletterAboutImage.width}
+          height={newsletterAboutImage.height}
+          data-ai-hint={newsletterAboutImage.hint}
           loading="lazy"
         />
 

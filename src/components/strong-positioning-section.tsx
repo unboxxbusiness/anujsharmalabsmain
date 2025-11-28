@@ -1,8 +1,11 @@
 'use client';
 
 import { Typography } from '@/components/ui/typography';
+import Image from 'next/image';
+import placeholderImageData from '@/lib/placeholder-images.json';
 
 export function StrongPositioningSection() {
+  const { blogNumbersImage } = placeholderImageData;
   return (
     <section className="py-12 md:py-20">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
@@ -15,6 +18,14 @@ export function StrongPositioningSection() {
             simple, effective systems that work in the real world.
           </Typography>
         </div>
+        <Image
+          src={blogNumbersImage.src}
+          alt={blogNumbersImage.alt}
+          width={blogNumbersImage.width}
+          height={blogNumbersImage.height}
+          data-ai-hint={blogNumbersImage.hint}
+          className="rounded-lg object-cover"
+        />
 
         <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
           <div className="space-y-4 pt-8 md:pt-0">

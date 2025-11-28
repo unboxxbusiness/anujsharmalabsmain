@@ -26,5 +26,33 @@
     "width": 1207,
     "height": 929,
     "hint": "newsletter concept"
+  },
+  "originStoryImage": {
+    "src": "https://picsum.photos/seed/origin-story/1280/400",
+    "alt": "A person outlining a journey on a whiteboard",
+    "width": 1280,
+    "height": 400,
+    "hint": "journey whiteboard"
+  },
+  "aiLibraryImage": {
+    "src": "https://picsum.photos/seed/ai-library/550/550",
+    "alt": "Abstract representation of an AI system",
+    "width": 550,
+    "height": 550,
+    "hint": "AI system"
+  },
+  "blogNumbersImage": {
+    "src": "https://picsum.photos/seed/blog-numbers/1280/400",
+    "alt": "Data points and charts on a screen",
+    "width": 1280,
+    "height": 400,
+    "hint": "data charts"
+  },
+  "newsletterAboutImage": {
+    "src": "https://picsum.photos/seed/newsletter-about/1280/400",
+    "alt": "Person writing in a notebook with a laptop",
+    "width": 1280,
+    "height": 400,
+    "hint": "writing notebook"
   }
 }
