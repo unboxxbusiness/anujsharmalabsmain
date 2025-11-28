@@ -252,7 +252,7 @@ export function HeroHeader() {
 const renderMenuItem = (item: MenuItem) => {
   return (
     <NavigationMenuItem key={item.title}>
-      <Link href={item.url} legacyBehavior={false}>
+      <Link href={item.url} passHref legacyBehavior>
         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
           {item.title}
         </NavigationMenuLink>
