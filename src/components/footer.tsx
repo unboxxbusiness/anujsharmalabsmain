@@ -27,7 +27,7 @@ export function Footer() {
       title: 'Resources',
       links: [
         { label: 'AI Systems Library', href: '/ai-systems-library' },
-        { label: 'Blog', href: '#' },
+        { label: 'Blog', href: '/blog' },
         { label: 'Newsletter', href: '/newsletter' },
         { label: 'Free Resources', href: '#services' },
       ],

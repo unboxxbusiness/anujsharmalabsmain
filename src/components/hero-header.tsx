@@ -43,6 +43,7 @@ const menu: MenuItem[] = [
   { title: 'AI Systems Library', url: '/ai-systems-library' },
   { title: 'Framework', url: '/framework' },
   { title: 'Newsletter', url: '/newsletter' },
+  { title: 'Blog', url: '/blog' },
 ];
 
 export function HeroHeader() {
