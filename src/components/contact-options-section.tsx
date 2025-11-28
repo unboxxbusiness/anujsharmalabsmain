@@ -18,8 +18,8 @@ const contactOptions = [
       'For any questions about AI systems, automation, partnerships, or collaborations.',
     contact: {
       type: 'email',
-      text: 'Email: anuj@email.com',
-      href: 'mailto:anuj@email.com',
+      text: 'Email: info@anujsharmalabs.live',
+      href: 'mailto:info@anujsharmalabs.live',
       icon: <Mail className="size-4 mr-2" />,
     },
   },
@@ -46,8 +46,8 @@ const contactOptions = [
     ],
     contact: {
       type: 'email',
-      text: 'Email: anuj@email.com',
-      href: 'mailto:anuj@email.com',
+      text: 'Email: info@anujsharmalabs.live',
+      href: 'mailto:info@anujsharmalabs.live',
       icon: <Mail className="size-4 mr-2" />,
     },
     subtext: 'Interested in inviting me to speak for your team, university, or event?',
@@ -57,8 +57,8 @@ const contactOptions = [
     description: 'For interviews, guest articles, podcasts, or media mentions.',
     contact: {
       type: 'email',
-      text: 'Email: anuj@email.com',
-      href: 'mailto:anuj@email.com',
+      text: 'Email: info@anujsharmalabs.live',
+      href: 'mailto:info@anujsharmalabs.live',
       icon: <Mail className="size-4 mr-2" />,
     },
   },
