@@ -56,9 +56,54 @@ export function HeroHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
-      <Navbar>
-        <NavBody>
+    <div className="sticky top-0 inset-x-0 z-40 w-full bg-background border-b">
+      <div className="relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent">
+        <NavbarLogo>
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
+              alt="Anuj Sharma Logo"
+              width={150}
+              height={150}
+            />
+          </Link>
+        </NavbarLogo>
+        <div className="hidden lg:flex items-center gap-2">
+          {menu.map((item) =>
+            item.items ? (
+              <DropdownMenu key={item.title}>
+                <DropdownMenuTrigger className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
+                  {item.title}
+                  <ChevronDown className="size-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {item.items.map((subItem) => (
+                    <DropdownMenuItem key={subItem.title} asChild>
+                      <Link href={subItem.url}>{subItem.title}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={item.title}
+                href={item.url!}
+                className="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md"
+              >
+                {item.title}
+              </Link>
+            )
+          )}
+        </div>
+        <div className="flex items-center gap-4">
+          <NavbarButton asChild>
+            <Link href="/contact-us">Get in Touch</Link>
+          </NavbarButton>
+        </div>
+      </div>
+
+      <div className="relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden">
+        <MobileNavHeader>
           <NavbarLogo>
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -69,107 +114,60 @@ export function HeroHeader() {
               />
             </Link>
           </NavbarLogo>
-          <div className="hidden lg:flex items-center gap-2">
-            {menu.map((item) =>
-              item.items ? (
-                <DropdownMenu key={item.title}>
-                  <DropdownMenuTrigger className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
+          <MobileNavToggle
+            isOpen={isMobileMenuOpen}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          />
+        </MobileNavHeader>
+
+        <MobileNavMenu
+          isOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+        >
+          {menu.flatMap((item) =>
+            item.items
+              ? [
+                  <Typography
+                    key={item.title}
+                    variant="h4"
+                    as="h4"
+                    className="px-4 font-semibold"
+                  >
                     {item.title}
-                    <ChevronDown className="size-4" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent>
-                    {item.items.map((subItem) => (
-                      <DropdownMenuItem key={subItem.title} asChild>
-                        <Link href={subItem.url}>{subItem.title}</Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Link
-                  key={item.title}
-                  href={item.url!}
-                  className="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md"
-                >
-                  {item.title}
-                </Link>
-              )
-            )}
-          </div>
-          <div className="flex items-center gap-4">
-            <NavbarButton asChild>
+                  </Typography>,
+                  ...item.items.map((subItem) => (
+                    <Link
+                      key={subItem.title}
+                      href={subItem.url}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="relative text-neutral-600 dark:text-neutral-300 px-8 py-2"
+                    >
+                      <span className="block">{subItem.title}</span>
+                    </Link>
+                  )),
+                ]
+              : [
+                  <Link
+                    key={item.title}
+                    href={item.url!}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="relative text-neutral-600 dark:text-neutral-300 px-4 py-2"
+                  >
+                    <span className="block">{item.title}</span>
+                  </Link>,
+                ]
+          )}
+          <div className="flex w-full flex-col gap-4 mt-4">
+            <NavbarButton
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="w-full"
+              asChild
+            >
               <Link href="/contact-us">Get in Touch</Link>
             </NavbarButton>
           </div>
-        </NavBody>
-
-        <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo>
-              <Link href="/" className="flex items-center gap-2">
-                <Image
-                  src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
-                  alt="Anuj Sharma Logo"
-                  width={150}
-                  height={150}
-                />
-              </Link>
-            </NavbarLogo>
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
-
-          <MobileNavMenu
-            isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
-            {menu.flatMap((item) =>
-              item.items
-                ? [
-                    <Typography
-                      key={item.title}
-                      variant="h4"
-                      as="h4"
-                      className="px-4 font-semibold"
-                    >
-                      {item.title}
-                    </Typography>,
-                    ...item.items.map((subItem) => (
-                      <Link
-                        key={subItem.title}
-                        href={subItem.url}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="relative text-neutral-600 dark:text-neutral-300 px-8 py-2"
-                      >
-                        <span className="block">{subItem.title}</span>
-                      </Link>
-                    )),
-                  ]
-                : [
-                    <Link
-                      key={item.title}
-                      href={item.url!}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="relative text-neutral-600 dark:text-neutral-300 px-4 py-2"
-                    >
-                      <span className="block">{item.title}</span>
-                    </Link>,
-                  ]
-            )}
-            <div className="flex w-full flex-col gap-4 mt-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full"
-                asChild
-              >
-                <Link href="/contact-us">Get in Touch</Link>
-              </NavbarButton>
-            </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar>
+        </MobileNavMenu>
+      </div>
     </div>
   );
 }
