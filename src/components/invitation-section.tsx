@@ -20,17 +20,14 @@ export function InvitationSection() {
           <Typography
             as="p"
             variant="p"
-            className="text-muted-foreground mt-6 text-lg"
+            className="text-muted-foreground !mt-4"
           >
             AI shouldn’t be complex. If you want to explore how AI can simplify
             your workflows, scale your content, or empower your team — I’m here
             to help.
           </Typography>
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button size="lg" asChild>
-            <Link href="#">Book the Free AI Workflow Audit</Link>
+          <Button size="lg" className="mt-8" asChild>
+            <Link href="/work-with-me">Book the Free AI Workflow Audit</Link>
           </Button>
         </div>
       </div>
