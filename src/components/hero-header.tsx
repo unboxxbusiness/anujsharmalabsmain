@@ -64,8 +64,8 @@ export function HeroHeader() {
               <Image
                 src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
                 alt="Anuj Sharma Logo"
-                width={50}
-                height={50}
+                width={150}
+                height={150}
               />
             </Link>
           </NavbarLogo>
@@ -110,8 +110,8 @@ export function HeroHeader() {
                 <Image
                   src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
                   alt="Anuj Sharma Logo"
-                  width={50}
-                  height={50}
+                  width={150}
+                  height={150}
                 />
               </Link>
             </NavbarLogo>
