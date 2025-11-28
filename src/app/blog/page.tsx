@@ -1,6 +1,7 @@
 'use client';
 
 import { BlogCategoriesSection } from '@/components/blog-categories-section';
+import { StrongPositioningSection } from '@/components/strong-positioning-section';
 import { Typography } from '@/components/ui/typography';
 
 function BlogHeroSection() {
@@ -34,6 +35,7 @@ export default function BlogPage() {
     <main>
       <BlogHeroSection />
       <BlogCategoriesSection />
+      <StrongPositioningSection />
     </main>
   );
 }
