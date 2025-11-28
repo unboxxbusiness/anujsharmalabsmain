@@ -11,6 +11,11 @@ import { InvitationSection } from '@/components/invitation-section';
 import Link from 'next/link';
 
 function WorkWithMeHeroSection() {
+  const whatsappNumber = '918851481785';
+  const message = 'Hello, I would like to book a free AI Workflow Audit.';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
   return (
     <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
       <div className="pt-32 md:pt-40">
@@ -33,7 +38,9 @@ function WorkWithMeHeroSection() {
         </Typography>
         <div className="mt-8 flex justify-center">
           <Button size="lg" asChild>
-            <Link href="/contact-us">Book a Free AI Workflow Audit</Link>
+            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Book a Free AI Workflow Audit
+            </Link>
           </Button>
         </div>
       </div>

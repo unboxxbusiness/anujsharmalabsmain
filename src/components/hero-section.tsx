@@ -1,11 +1,15 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Typography } from '@/components/ui/typography';
 import Link from 'next/link';
 
 export function HeroSection() {
+  const whatsappNumber = '918851481785';
+  const message = 'Hello, I would like to book a free AI Workflow Audit.';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
   return (
     <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
       <div className="pt-32 md:pt-40">
@@ -28,17 +32,12 @@ export function HeroSection() {
           required.
         </Typography>
 
-        <div className="mt-8 flex w-full max-w-md flex-col items-center gap-4 mx-auto">
-          <div className="flex w-full flex-col gap-2 sm:flex-row px-4">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-grow"
-            />
-            <Button className="bg-slate-800 text-white hover:bg-black" asChild>
-              <Link href="/free-resources">Get My Free AI Workflow Guide</Link>
-            </Button>
-          </div>
+        <div className="mt-8 flex w-full max-w-md flex-col items-center gap-4 mx-auto px-4">
+          <Button asChild className="w-full" size="lg">
+            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Book a Free AI Workflow Audit
+            </Link>
+          </Button>
           <div className="flex items-center gap-2">
             <Typography variant="span" className="text-muted-foreground">
               Or

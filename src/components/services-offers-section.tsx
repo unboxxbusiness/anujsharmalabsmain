@@ -9,32 +9,44 @@ import {
   IconUsers,
 } from '@tabler/icons-react';
 import React from 'react';
+import Link from 'next/link';
+import { Button } from './ui/button';
 
 export function ServicesOffersSection() {
+  const whatsappNumber = '918851481785';
+  const message = 'Hello, I would like to book a free AI Workflow Audit.';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
   const features = [
     {
       title: 'AI Workflow Audit (Free)',
       description:
         'A 15-min call to identify 1-2 workflows to automate and get a quick-win AI recommendation.',
       icon: <IconHelp />,
+      href: whatsappUrl,
     },
     {
       title: 'AI System Buildout',
       description:
         'A fully functional, plug-and-play AI system your team can use from Day 1.',
       icon: <IconTerminal2 />,
+      href: '/work-with-me',
     },
     {
       title: 'Content Engine Setup',
       description:
         'A complete system to produce 20-50 pieces of content a month with less effort.',
       icon: <IconFileText />,
+      href: '/work-with-me',
     },
     {
       title: 'Team Training & Workshops',
       description:
         'Make your team confident and capable with AI through practical, custom-tailored training.',
       icon: <IconUsers />,
+      href: '/work-with-me',
     },
   ];
 
@@ -69,11 +81,13 @@ const Feature = ({
   title,
   description,
   icon,
+  href,
   index,
 }: {
   title: string;
   description: string;
   icon: React.ReactNode;
+  href: string;
   index: number;
 }) => {
   return (
@@ -106,6 +120,17 @@ const Feature = ({
       >
         {description}
       </Typography>
+      <div className="mt-auto pt-4 px-10">
+        <Button variant="link" asChild className="p-0 h-auto">
+          <Link
+            href={href}
+            target={href.startsWith('https') ? '_blank' : undefined}
+            rel={href.startsWith('https') ? 'noopener noreferrer' : undefined}
+          >
+            {title.includes('Free') ? 'Book Now' : 'Learn More'}
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 };

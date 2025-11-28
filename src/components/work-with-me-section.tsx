@@ -8,6 +8,12 @@ import Link from 'next/link';
 import React from 'react';
 
 export function WorkWithMeSection() {
+  const whatsappNumber = '918851481785';
+  const message = 'Hello, I would like to book a free AI Workflow Audit.';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
   const offers = [
     {
       title: 'AI Workflow Audit (Free)',
@@ -57,7 +63,9 @@ export function WorkWithMeSection() {
         </div>
         <div className="text-center">
           <Button size="lg" asChild>
-            <Link href="/work-with-me">Book the Free AI Workflow Audit</Link>
+            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+              Book the Free AI Workflow Audit
+            </Link>
           </Button>
         </div>
       </div>

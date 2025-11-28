@@ -11,6 +11,12 @@ import { Button } from './ui/button';
 import { Check, Mail, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
+const whatsappNumber = '918851481785';
+const message = 'Hello, I would like to book a free AI Workflow Audit.';
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  message
+)}`;
+
 const contactOptions = [
   {
     title: 'General Inquiries',
@@ -29,7 +35,7 @@ const contactOptions = [
     contact: {
       type: 'button',
       text: 'Book a Free AI Workflow Audit',
-      href: '/work-with-me',
+      href: whatsappUrl,
       icon: <Calendar className="size-4 mr-2" />,
     },
     subtext: 'I’ll map out 1–2 workflows your team can automate immediately.',
@@ -126,7 +132,19 @@ export function ContactOptionsSection() {
                     </Button>
                   ) : (
                     <Button asChild>
-                      <Link href={option.contact.href}>
+                      <Link
+                        href={option.contact.href}
+                        target={
+                          option.contact.href.startsWith('https')
+                            ? '_blank'
+                            : undefined
+                        }
+                        rel={
+                          option.contact.href.startsWith('https')
+                            ? 'noopener noreferrer'
+                            : undefined
+                        }
+                      >
                         {option.contact.icon}
                         {option.contact.text}
                       </Link>

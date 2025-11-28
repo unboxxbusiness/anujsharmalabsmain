@@ -6,10 +6,19 @@ import Link from 'next/link';
 import * as React from 'react';
 
 export function InvitationSection() {
+  const whatsappNumber = '918851481785';
+  const message = 'Hello, I would like to book a free AI Workflow Audit.';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <Typography as="blockquote" variant="blockquote" className="text-2xl font-semibold !border-l-0">
+        <Typography
+          as="blockquote"
+          variant="blockquote"
+          className="text-2xl font-semibold !border-l-0"
+        >
           “AI shouldn’t be complex.”
         </Typography>
         <Typography as="p" variant="p" className="text-muted-foreground mt-6">
@@ -17,7 +26,9 @@ export function InvitationSection() {
           content, or empower your team — I’m here to help.
         </Typography>
         <Button size="lg" className="mt-8" asChild>
-          <Link href="/work-with-me">Book the Free AI Workflow Audit</Link>
+          <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            Book the Free AI Workflow Audit
+          </Link>
         </Button>
       </div>
     </section>
