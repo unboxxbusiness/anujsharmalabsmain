@@ -21,8 +21,8 @@
     "hint": "AI resources"
   },
   "newsletterCtaImage": {
-    "src": "https://picsum.photos/seed/newsletter-cta/1207/929",
-    "alt": "Newsletter concept illustration",
+    "src": "https://res.cloudinary.com/dhrigocvd/image/upload/v1764318905/newsletter_ry1jcy.png",
+    "alt": "AI Systems Weekly Newsletter",
     "width": 1207,
     "height": 929,
     "hint": "newsletter concept"
