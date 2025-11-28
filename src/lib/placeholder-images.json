@@ -12,5 +12,12 @@
     "width": 600,
     "height": 600,
     "hint": "results chart"
+  },
+  "freeResourcesImage": {
+    "src": "https://picsum.photos/seed/resources-page/1280/400",
+    "alt": "Team working together",
+    "width": 1280,
+    "height": 400,
+    "hint": "team working"
   }
 }
