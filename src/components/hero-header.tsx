@@ -2,7 +2,6 @@
 import {
   Navbar,
   NavBody,
-  NavItems,
   MobileNav,
   NavbarLogo,
   NavbarButton,
@@ -20,6 +19,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export function HeroHeader() {
   const menu = [
@@ -61,16 +61,19 @@ export function HeroHeader() {
         <NavBody>
           <NavbarLogo>
             <Link href="/" className="flex items-center gap-2">
-              <Typography variant="h3" as="span">
-                Anuj Sharma
-              </Typography>
+              <Image
+                src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
+                alt="Anuj Sharma Logo"
+                width={40}
+                height={40}
+              />
             </Link>
           </NavbarLogo>
-          <div className="flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             {menu.map((item) =>
               item.items ? (
                 <DropdownMenu key={item.title}>
-                  <DropdownMenuTrigger className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300">
+                  <DropdownMenuTrigger className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md">
                     {item.title}
                     <ChevronDown className="size-4" />
                   </DropdownMenuTrigger>
@@ -86,7 +89,7 @@ export function HeroHeader() {
                 <Link
                   key={item.title}
                   href={item.url!}
-                  className="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300"
+                  className="px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-md"
                 >
                   {item.title}
                 </Link>
@@ -94,7 +97,7 @@ export function HeroHeader() {
             )}
           </div>
           <div className="flex items-center gap-4">
-            <NavbarButton asChild variant="secondary">
+            <NavbarButton asChild>
               <Link href="/contact-us">Get in Touch</Link>
             </NavbarButton>
           </div>
@@ -104,9 +107,12 @@ export function HeroHeader() {
           <MobileNavHeader>
             <NavbarLogo>
               <Link href="/" className="flex items-center gap-2">
-                <Typography variant="h3" as="span">
-                  Anuj Sharma
-                </Typography>
+                <Image
+                  src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
+                  alt="Anuj Sharma Logo"
+                  width={40}
+                  height={40}
+                />
               </Link>
             </NavbarLogo>
             <MobileNavToggle
@@ -121,31 +127,40 @@ export function HeroHeader() {
           >
             {menu.flatMap((item) =>
               item.items
-                ? item.items.map((subItem) => (
-                    <Link
-                      key={subItem.title}
-                      href={subItem.url}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="relative text-neutral-600 dark:text-neutral-300"
+                ? [
+                    <Typography
+                      key={item.title}
+                      variant="h4"
+                      as="h4"
+                      className="px-4 font-semibold"
                     >
-                      <span className="block">{subItem.title}</span>
-                    </Link>
-                  ))
-                : (
-                  <Link
-                    key={item.title}
-                    href={item.url!}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="relative text-neutral-600 dark:text-neutral-300"
-                  >
-                    <span className="block">{item.title}</span>
-                  </Link>
-                )
+                      {item.title}
+                    </Typography>,
+                    ...item.items.map((subItem) => (
+                      <Link
+                        key={subItem.title}
+                        href={subItem.url}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="relative text-neutral-600 dark:text-neutral-300 px-8 py-2"
+                      >
+                        <span className="block">{subItem.title}</span>
+                      </Link>
+                    )),
+                  ]
+                : [
+                    <Link
+                      key={item.title}
+                      href={item.url!}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="relative text-neutral-600 dark:text-neutral-300 px-4 py-2"
+                    >
+                      <span className="block">{item.title}</span>
+                    </Link>,
+                  ]
             )}
-            <div className="flex w-full flex-col gap-4">
+            <div className="flex w-full flex-col gap-4 mt-4">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
                 className="w-full"
                 asChild
               >
