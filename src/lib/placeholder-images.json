@@ -49,10 +49,10 @@
     "hint": "data charts"
   },
   "newsletterAboutImage": {
-    "src": "https://picsum.photos/seed/newsletter-about/1280/400",
-    "alt": "Person writing in a notebook with a laptop",
+    "src": "https://res.cloudinary.com/dhrigocvd/image/upload/v1764319593/newsletter_as_ai_system_ixzm1s.png",
+    "alt": "AI systems newsletter graphic",
     "width": 1280,
     "height": 400,
-    "hint": "writing notebook"
+    "hint": "newsletter graphic"
   }
 }
