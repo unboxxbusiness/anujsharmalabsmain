@@ -3,6 +3,7 @@ import './globals.css';
 import { HeroHeader } from '@/components/hero-header';
 import { Toaster } from '@/components/ui/toaster';
 import { Footer } from '@/components/footer';
+import { ScrollToTop } from '@/components/ui/scroll-to-top';
 
 export const metadata: Metadata = {
   title: 'Anuj Sharma | AI Automation & Digital Marketing',
@@ -22,6 +23,7 @@ export default function RootLayout({
         {children}
         <Toaster />
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
