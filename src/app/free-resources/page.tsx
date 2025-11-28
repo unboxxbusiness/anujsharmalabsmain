@@ -8,6 +8,7 @@ import { FeaturedFreebiesSection } from '@/components/featured-freebies-section'
 import { WorkflowTemplatesSection } from '@/components/workflow-templates-section';
 import { MiniToolsSection } from '@/components/mini-tools-section';
 import { TutorialsSection } from '@/components/tutorials-section';
+import { BlogCtaSection } from '@/components/blog-cta-section';
 
 function FreeResourcesHeroSection() {
   return (
@@ -49,6 +50,7 @@ export default function FreeResourcesPage() {
       <WorkflowTemplatesSection />
       <MiniToolsSection />
       <TutorialsSection />
+      <BlogCtaSection />
     </main>
   );
 }
