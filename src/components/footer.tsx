@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Typography } from '@/components/ui/typography';
 import { Input } from './ui/input';
+import Image from 'next/image';
 
 export function Footer() {
   const footerLinks = [
@@ -60,9 +61,14 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <Typography variant="h3" as="h3" className="mb-4">
-              Anuj Sharma
-            </Typography>
+            <Link href="/" className="mb-4 inline-block">
+              <Image
+                src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
+                alt="Anuj Sharma Logo"
+                width={100}
+                height={100}
+              />
+            </Link>
             <Typography variant="p" as="p" className="mb-6 text-muted-foreground">
               AI Automation & Digital Marketing Specialist
             </Typography>
