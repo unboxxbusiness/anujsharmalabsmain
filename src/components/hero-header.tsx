@@ -66,6 +66,11 @@ const resourcesMenuItems: MenuItem[] = [
       'Insights, workflows, and systems to help you work smarter with AI.',
     icon: <Book />,
   },
+  {
+    title: 'Newsletter',
+    url: '/newsletter',
+    description: 'Get weekly AI workflows and systems in your inbox.',
+  },
 ];
 
 const menu: MenuItem[] = [
@@ -74,14 +79,7 @@ const menu: MenuItem[] = [
   {
     title: 'Resources',
     url: '#',
-    items: [
-      ...resourcesMenuItems,
-      {
-        title: 'Newsletter',
-        url: '/newsletter',
-        description: 'Get weekly AI workflows and systems in your inbox.',
-      },
-    ],
+    items: resourcesMenuItems,
   },
   { title: 'Contact', url: '/contact-us' },
 ];
@@ -252,11 +250,9 @@ export function HeroHeader() {
 const renderMenuItem = (item: MenuItem) => {
   return (
     <NavigationMenuItem key={item.title}>
-      <Link href={item.url} passHref legacyBehavior>
-        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-          {item.title}
-        </NavigationMenuLink>
-      </Link>
+      <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+        <Link href={item.url}>{item.title}</Link>
+      </NavigationMenuLink>
     </NavigationMenuItem>
   );
 };
