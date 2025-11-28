@@ -28,8 +28,8 @@
     "hint": "newsletter concept"
   },
   "originStoryImage": {
-    "src": "https://picsum.photos/seed/origin-story/1280/400",
-    "alt": "A person outlining a journey on a whiteboard",
+    "src": "https://res.cloudinary.com/dhrigocvd/image/upload/v1764317698/About_us_As_j3zapu.png",
+    "alt": "About us section image",
     "width": 1280,
     "height": 400,
     "hint": "journey whiteboard"
