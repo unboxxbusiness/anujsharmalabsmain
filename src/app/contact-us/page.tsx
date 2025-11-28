@@ -1,5 +1,6 @@
 'use client';
 
+import { ContactIntroSection } from '@/components/contact-intro-section';
 import { Typography } from '@/components/ui/typography';
 
 function ContactUsHeroSection() {
@@ -31,6 +32,7 @@ export default function ContactUsPage() {
   return (
     <main>
       <ContactUsHeroSection />
+      <ContactIntroSection />
     </main>
   );
 }
