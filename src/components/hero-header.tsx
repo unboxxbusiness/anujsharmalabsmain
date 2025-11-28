@@ -28,6 +28,7 @@ import {
 } from '@/components/ui/sheet';
 import { Typography } from '@/components/ui/typography';
 import * as React from 'react';
+import { cn } from '@/lib/utils';
 
 interface MenuItem {
   title: string;
@@ -37,16 +38,78 @@ interface MenuItem {
   items?: MenuItem[];
 }
 
-const menu: MenuItem[] = [
-  { title: 'About Us', url: '/about-us' },
-  { title: 'Work With Me', url: '/work-with-me' },
-  { title: 'AI Systems Library', url: '/ai-systems-library' },
-  { title: 'Framework', url: '/framework' },
-  { title: 'Free Resources', url: '/free-resources' },
-  { title: 'Newsletter', url: '/newsletter' },
-  { title: 'Blog', url: '/blog' },
-  { title: 'Contact Us', url: '/contact-us' },
+const resourcesMenuItems: MenuItem[] = [
+  {
+    title: 'AI Systems Library',
+    url: '/ai-systems-library',
+    description:
+      'A library of AI workflows, templates, and tutorials for teams.',
+    icon: <Zap />,
+  },
+  {
+    title: 'Framework',
+    url: '/framework',
+    description: 'The S.I.M.P.L.E. AI System for building powerful workflows.',
+    icon: <Trees />,
+  },
+  {
+    title: 'Free Resources',
+    url: '/free-resources',
+    description: 'Free guides, checklists, and templates to get started.',
+    icon: <Sunset />,
+  },
+  {
+    title: 'Blog',
+    url: '/blog',
+    description:
+      'Insights, workflows, and systems to help you work smarter with AI.',
+    icon: <Book />,
+  },
 ];
+
+const menu: MenuItem[] = [
+  { title: 'About', url: '/about-us' },
+  { title: 'Work With Me', url: '/work-with-me' },
+  {
+    title: 'Resources',
+    url: '#',
+    items: [
+      ...resourcesMenuItems,
+      {
+        title: 'Newsletter',
+        url: '/newsletter',
+        description: 'Get weekly AI workflows and systems in your inbox.',
+      },
+    ],
+  },
+  { title: 'Contact', url: '/contact-us' },
+];
+
+const ListItem = React.forwardRef<
+  React.ElementRef<'a'>,
+  React.ComponentPropsWithoutRef<'a'>
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = 'ListItem';
 
 export function HeroHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -66,7 +129,30 @@ export function HeroHeader() {
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
+                  {menu.map((item) =>
+                    item.items ? (
+                      <NavigationMenuItem key={item.title}>
+                        <NavigationMenuTrigger>
+                          {item.title}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                            {item.items.map((component) => (
+                              <ListItem
+                                key={component.title}
+                                title={component.title}
+                                href={component.url}
+                              >
+                                {component.description}
+                              </ListItem>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    ) : (
+                      renderMenuItem(item)
+                    )
+                  )}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
@@ -106,16 +192,43 @@ export function HeroHeader() {
                 </SheetHeader>
                 <div className="my-6 flex flex-col gap-6">
                   <div className="flex w-full flex-col gap-4">
-                    {menu.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={item.url}
-                        className="font-semibold text-lg py-2"
-                        onClick={closeMobileMenu}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
+                    {menu.map((item) =>
+                      item.items ? (
+                        <Accordion
+                          type="single"
+                          collapsible
+                          key={item.title}
+                          className="w-full"
+                        >
+                          <AccordionItem value={item.title}>
+                            <AccordionTrigger className="font-semibold text-lg py-2">
+                              {item.title}
+                            </AccordionTrigger>
+                            <AccordionContent className="pl-4">
+                              {item.items.map((subItem) => (
+                                <Link
+                                  key={subItem.title}
+                                  href={subItem.url}
+                                  className="block font-normal text-base py-2 text-muted-foreground"
+                                  onClick={closeMobileMenu}
+                                >
+                                  {subItem.title}
+                                </Link>
+                              ))}
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      ) : (
+                        <Link
+                          key={item.title}
+                          href={item.url}
+                          className="font-semibold text-lg py-2"
+                          onClick={closeMobileMenu}
+                        >
+                          {item.title}
+                        </Link>
+                      )
+                    )}
                   </div>
 
                   <div className="flex flex-col gap-3">
@@ -137,12 +250,12 @@ export function HeroHeader() {
 
 const renderMenuItem = (item: MenuItem) => {
   return (
-    <Link
-      key={item.title}
-      href={item.url}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
-    >
-      {item.title}
-    </Link>
+    <NavigationMenuItem key={item.title}>
+      <Link href={item.url} legacyBehavior passHref>
+        <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground">
+          {item.title}
+        </NavigationMenuLink>
+      </Link>
+    </NavigationMenuItem>
   );
 };
