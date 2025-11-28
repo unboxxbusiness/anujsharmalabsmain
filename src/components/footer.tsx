@@ -65,8 +65,8 @@ export function Footer() {
               <Image
                 src="https://res.cloudinary.com/dhrigocvd/image/upload/v1764312762/as_logo_npt3k0.png"
                 alt="Anuj Sharma Logo"
-                width={100}
-                height={100}
+                width={150}
+                height={150}
               />
             </Link>
             <Typography variant="p" as="p" className="mb-6 text-muted-foreground">
