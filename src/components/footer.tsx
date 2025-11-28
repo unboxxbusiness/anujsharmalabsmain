@@ -29,7 +29,7 @@ export function Footer() {
         { label: 'AI Systems Library', href: '/ai-systems-library' },
         { label: 'Blog', href: '/blog' },
         { label: 'Newsletter', href: '/newsletter' },
-        { label: 'Free Resources', href: '#services' },
+        { label: 'Free Resources', href: '/free-resources' },
       ],
     },
   ];
