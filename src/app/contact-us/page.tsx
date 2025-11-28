@@ -5,6 +5,7 @@ import { ContactOptionsSection } from '@/components/contact-options-section';
 import { Typography } from '@/components/ui/typography';
 import { ContactFormSection } from '@/components/contact-form-section';
 import { SocialLinksSection } from '@/components/social-links-section';
+import { InvitationSection } from '@/components/invitation-section';
 
 function ContactUsHeroSection() {
   return (
@@ -39,6 +40,7 @@ export default function ContactUsPage() {
       <ContactOptionsSection />
       <ContactFormSection />
       <SocialLinksSection />
+      <InvitationSection />
     </main>
   );
 }
