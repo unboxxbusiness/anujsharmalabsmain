@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { FreeResourcesIntroSection } from '@/components/free-resources-intro-section';
 import { FeaturedFreebiesSection } from '@/components/featured-freebies-section';
 import { WorkflowTemplatesSection } from '@/components/workflow-templates-section';
+import { MiniToolsSection } from '@/components/mini-tools-section';
 
 function FreeResourcesHeroSection() {
   return (
@@ -45,6 +46,7 @@ export default function FreeResourcesPage() {
       <FreeResourcesIntroSection />
       <FeaturedFreebiesSection />
       <WorkflowTemplatesSection />
+      <MiniToolsSection />
     </main>
   );
 }
