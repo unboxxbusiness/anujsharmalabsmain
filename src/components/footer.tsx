@@ -1,6 +1,6 @@
 'use client';
 
-import { Twitter, Linkedin, Youtube, Send } from 'lucide-react';
+import { Twitter, Linkedin, Youtube, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import {
   Tooltip,
@@ -53,6 +53,12 @@ export function Footer() {
       href: '#',
       label: 'YouTube',
       tooltip: 'Subscribe on YouTube',
+    },
+    {
+      icon: <Instagram className="size-4" />,
+      href: '#',
+      label: 'Instagram',
+      tooltip: 'Follow us on Instagram',
     },
   ];
 
