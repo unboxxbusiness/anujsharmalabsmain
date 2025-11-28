@@ -8,7 +8,7 @@ import Link from 'next/link';
 export function HeroSection() {
   return (
     <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
-      <div className="pt-48 md:pt-40">
+      <div className="pt-32 md:pt-40">
         <Typography
           variant="h1"
           as="h1"
@@ -35,8 +35,8 @@ export function HeroSection() {
               placeholder="Enter your email"
               className="flex-grow"
             />
-            <Button className="bg-slate-800 text-white hover:bg-black">
-              Get My Free AI Workflow Guide
+            <Button className="bg-slate-800 text-white hover:bg-black" asChild>
+              <Link href="/free-resources">Get My Free AI Workflow Guide</Link>
             </Button>
           </div>
           <div className="flex items-center gap-2">
@@ -44,7 +44,7 @@ export function HeroSection() {
               Or
             </Typography>
             <Button variant="link" className="p-0" asChild>
-              <Link href="#framework">Explore the S.I.M.P.L.E. AI System</Link>
+              <Link href="/framework">Explore the S.I.M.P.L.E. AI System</Link>
             </Button>
           </div>
         </div>

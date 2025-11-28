@@ -9,11 +9,12 @@ import { ToolStackSection } from '@/components/tool-stack-section';
 import { TemplatesSection } from '@/components/templates-section';
 import { HowToUseSection } from '@/components/how-to-use-section';
 import { InvitationSection } from '@/components/invitation-section';
+import Link from 'next/link';
 
 function AiSystemsLibraryHeroSection() {
   return (
     <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
-      <div className="pt-48 md:pt-40">
+      <div className="pt-32 md:pt-40">
         <Typography
           variant="h1"
           as="h1"
@@ -32,7 +33,9 @@ function AiSystemsLibraryHeroSection() {
           workflows, scale content, and work smarter — without complexity.
         </Typography>
         <div className="mt-8 flex justify-center">
-          <Button size="lg">Download the AI Workflow Guide</Button>
+          <Button size="lg" asChild>
+            <Link href="/free-resources">Download the AI Workflow Guide</Link>
+          </Button>
         </div>
       </div>
     </section>

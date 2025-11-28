@@ -9,7 +9,7 @@ import { InvitationSection } from '@/components/invitation-section';
 function ContactUsHeroSection() {
   return (
     <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
-      <div className="pt-48 md:pt-40">
+      <div className="pt-32 md:pt-40">
         <Typography
           variant="h1"
           as="h1"

@@ -7,11 +7,12 @@ import { NewsletterAboutSection } from '@/components/newsletter-about-section';
 import { WeeklyNewsletterBenefitsSection } from '@/components/weekly-newsletter-benefits-section';
 import { WhoIsItForSection } from '@/components/who-is-it-for-section';
 import { FinalInvitationSection } from '@/components/final-invitation-section';
+import Link from 'next/link';
 
 function NewsletterHeroSection() {
   return (
     <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
-      <div className="pt-48 md:pt-40">
+      <div className="pt-32 md:pt-40">
         <Typography
           variant="h1"
           as="h1"
@@ -37,8 +38,8 @@ function NewsletterHeroSection() {
               placeholder="Enter your email"
               className="flex-grow"
             />
-            <Button className="bg-slate-800 text-white hover:bg-black">
-              Subscribe for Free
+            <Button className="bg-slate-800 text-white hover:bg-black" asChild>
+              <Link href="/newsletter">Subscribe for Free</Link>
             </Button>
           </div>
         </div>

@@ -8,11 +8,12 @@ import { ServicesOffersSection } from '@/components/services-offers-section';
 import { MyProcessSection } from '@/components/my-process-section';
 import { WhyWorkWithMeSection } from '@/components/why-work-with-me-section';
 import { InvitationSection } from '@/components/invitation-section';
+import Link from 'next/link';
 
 function WorkWithMeHeroSection() {
   return (
     <section className="bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gridBackground.png')] w-full bg-no-repeat bg-cover bg-center text-sm pb-44">
-      <div className="pt-48 md:pt-40">
+      <div className="pt-32 md:pt-40">
         <Typography
           variant="h1"
           as="h1"
@@ -31,7 +32,9 @@ function WorkWithMeHeroSection() {
           performance — without complexity or technical overwhelm.
         </Typography>
         <div className="mt-8 flex justify-center">
-          <Button size="lg">Book a Free AI Workflow Audit</Button>
+          <Button size="lg" asChild>
+            <Link href="/contact-us">Book a Free AI Workflow Audit</Link>
+          </Button>
         </div>
       </div>
     </section>
