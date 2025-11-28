@@ -51,7 +51,7 @@ export function BlogCtaSection() {
               ))}
             </ul>
             <Button asChild size="lg" className="mt-8">
-              <Link href="/newsletter">Subscribe for Free</Link>
+              <Link href="https://edu.anujsharmalabs.live" target="_blank" rel="noopener noreferrer">Subscribe for Free</Link>
             </Button>
           </div>
           <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">

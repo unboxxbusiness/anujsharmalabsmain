@@ -22,7 +22,7 @@ const freebies = [
       '7 plug-and-play workflows that automate content, reporting, communication & more.',
     icon: <IconBook />,
     cta: 'Download Guide',
-    href: '/ai-systems-library',
+    href: 'https://edu.anujsharmalabs.live',
   },
   {
     title: 'Content Engine Blueprint',
@@ -30,21 +30,21 @@ const freebies = [
       'A simple system to create 20–50 content pieces per month using AI.',
     icon: <IconEngine />,
     cta: 'Get Blueprint',
-    href: '/ai-systems-library',
+    href: 'https://edu.anujsharmalabs.live',
   },
   {
     title: 'Content Repurposing Checklist',
     description: 'Turn a single piece of content into 20+ assets automatically.',
     icon: <IconRepeat />,
     cta: 'Download Checklist',
-    href: '/free-resources',
+    href: 'https://edu.anujsharmalabs.live',
   },
   {
     title: 'Meeting Notes → Tasks Automation Template',
     description: 'Instant summaries, action items & follow-ups.',
     icon: <IconListCheck />,
     cta: 'Get Template',
-    href: '/free-resources',
+    href: 'https://edu.anujsharmalabs.live',
   },
   {
     title: 'AI Prompt Library',
@@ -52,14 +52,14 @@ const freebies = [
       '30+ ready-made prompts for marketing, content, and education workflows.',
     icon: <IconFileText />,
     cta: 'Download Prompts',
-    href: '/free-resources',
+    href: 'https://edu.anujsharmalabs.live',
   },
   {
     title: 'S.I.M.P.L.E. AI System™ Overview',
     description: 'Your 6-step framework for building any AI workflow.',
     icon: <IconHelp />,
     cta: 'Learn the Framework',
-    href: '/framework',
+    href: 'https://edu.anujsharmalabs.live',
   },
 ];
 
@@ -132,7 +132,7 @@ const Feature = ({
       </Typography>
       <div className="mt-auto pt-4 px-10">
         <Button variant="link" asChild className="p-0 h-auto">
-          <Link href={href}>{cta}</Link>
+          <Link href={href} target="_blank" rel="noopener noreferrer">{cta}</Link>
         </Button>
       </div>
     </div>

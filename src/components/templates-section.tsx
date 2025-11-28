@@ -63,7 +63,7 @@ export function TemplatesSection() {
         </div>
         <div className="mt-12 text-center">
           <Button size="lg" asChild>
-            <Link href="/free-resources">Download Templates</Link>
+            <Link href="https://edu.anujsharmalabs.live" target="_blank" rel="noopener noreferrer">Download Templates</Link>
           </Button>
         </div>
       </div>

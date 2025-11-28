@@ -33,7 +33,7 @@ function FreeResourcesHeroSection() {
         </Typography>
         <div className="mt-8 flex justify-center">
           <Button size="lg" asChild>
-            <Link href="/ai-systems-library">Download My AI Workflow Guide</Link>
+            <Link href="https://edu.anujsharmalabs.live" target="_blank" rel="noopener noreferrer">Download My AI Workflow Guide</Link>
           </Button>
         </div>
       </div>

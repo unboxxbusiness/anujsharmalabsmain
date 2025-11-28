@@ -56,7 +56,7 @@ export function ToolStackSection() {
         </div>
         <div className="mt-12 text-center">
           <Button size="lg" asChild>
-            <Link href="/free-resources">See My Full Tool Stack</Link>
+            <Link href="https://edu.anujsharmalabs.live" target="_blank" rel="noopener noreferrer">See My Full Tool Stack</Link>
           </Button>
         </div>
       </div>

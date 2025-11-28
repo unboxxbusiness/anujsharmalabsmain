@@ -39,7 +39,7 @@ function NewsletterHeroSection() {
               className="flex-grow"
             />
             <Button className="bg-slate-800 text-white hover:bg-black" asChild>
-              <Link href="/newsletter">Subscribe for Free</Link>
+              <Link href="https://edu.anujsharmalabs.live" target="_blank" rel="noopener noreferrer">Subscribe for Free</Link>
             </Button>
           </div>
         </div>

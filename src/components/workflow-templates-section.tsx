@@ -71,7 +71,7 @@ export function WorkflowTemplatesSection() {
         </div>
         <div className="text-center">
           <Button size="lg" asChild>
-            <Link href="/free-resources">Download All Templates</Link>
+            <Link href="https://edu.anujsharmalabs.live" target="_blank" rel="noopener noreferrer">Download All Templates</Link>
           </Button>
         </div>
       </div>

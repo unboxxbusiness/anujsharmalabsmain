@@ -62,7 +62,7 @@ export function MiniToolsSection() {
         </div>
         <div className="text-center">
           <Button size="lg" asChild>
-            <Link href="/free-resources">Grab the Checklists</Link>
+            <Link href="https://edu.anujsharmalabs.live" target="_blank" rel="noopener noreferrer">Grab the Checklists</Link>
           </Button>
         </div>
       </div>
