@@ -23,7 +23,7 @@ export function ResultsSection() {
           <Typography variant="h2" as="h2" className="mb-6">
             Practical AI Systems That Deliver Real Results
           </Typography>
-          <Typography variant="p" as="p" className="mb-8 text-muted-foreground">
+          <Typography variant="lead" as="p" className="mb-8">
             My work focuses on building real-world automation systems that
             reduce complexity, save time, and improve performance — using tools
             anyone can operate.

@@ -16,7 +16,7 @@ export function AboutMeSection() {
           <Typography variant="h2" as="h2">
             About Me
           </Typography>
-          <Typography variant="p" as="p" className="text-lg">
+          <Typography variant="lead" as="p">
             I’m the Digital Head at Amity University, where I help marketers,
             educators, and digital teams adopt AI in a simple, practical, and
             results-driven way.

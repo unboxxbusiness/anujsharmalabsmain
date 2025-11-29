@@ -23,9 +23,9 @@ export function HeroSection() {
         </Typography>
 
         <Typography
-          variant="p"
+          variant="lead"
           as="p"
-          className="text-sm md:text-base mx-auto max-w-2xl text-center mt-6 max-md:px-2"
+          className="mx-auto max-w-2xl text-center mt-6 max-md:px-2"
         >
           I help teams automate workflows, scale content, and grow faster using
           simple, practical AI systems anyone can use — no technical expertise
@@ -39,7 +39,7 @@ export function HeroSection() {
             </Link>
           </Button>
           <div className="flex items-center gap-2">
-            <Typography variant="span" className="text-muted-foreground">
+            <Typography variant="small" className="text-muted-foreground">
               Or
             </Typography>
             <Button variant="link" className="p-0" asChild>
@@ -48,9 +48,9 @@ export function HeroSection() {
           </div>
         </div>
         <Typography
-          variant="p"
+          variant="small"
           as="p"
-          className="text-center text-sm text-muted-foreground mt-4"
+          className="text-center text-muted-foreground mt-4"
         >
           Digital Head at Amity University | AI Systems & Automation Specialist
         </Typography>

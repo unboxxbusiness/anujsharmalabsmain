@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils';
 const typographyVariants = cva('text-foreground', {
   variants: {
     variant: {
-      h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
-      h2: 'scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0',
-      h3: 'scroll-m-20 text-2xl font-semibold tracking-tight',
-      h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
+      h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl',
+      h2: 'scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 md:text-4xl',
+      h3: 'scroll-m-20 text-2xl font-semibold tracking-tight md:text-3xl',
+      h4: 'scroll-m-20 text-xl font-semibold tracking-tight md:text-2xl',
       p: 'leading-7 [&:not(:first-child)]:mt-6',
       blockquote: 'mt-6 border-l-2 pl-6 italic',
       ul: 'my-6 ml-6 list-disc [&>li]:mt-2',
@@ -36,7 +36,21 @@ export interface TypographyProps
 
 const Typography = React.forwardRef<HTMLElement, TypographyProps>(
   ({ className, variant, as, ...props }, ref) => {
-    const Comp = as || (variant === 'p' ? 'p' : 'span');
+    const Comp =
+      as ||
+      (variant === 'h1'
+        ? 'h1'
+        : variant === 'h2'
+        ? 'h2'
+        : variant === 'h3'
+        ? 'h3'
+        : variant === 'h4'
+        ? 'h4'
+        : variant === 'p'
+        ? 'p'
+        : variant === 'blockquote'
+        ? 'blockquote'
+        : 'p');
     return (
       <Comp
         className={cn(typographyVariants({ variant, className }))}
