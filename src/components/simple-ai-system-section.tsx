@@ -100,10 +100,10 @@ const steps = [
 
 export function SimpleAiSystemSection() {
   return (
-    <section id="framework" className="py-16 md:py-32">
+    <section id="framework" aria-labelledby="framework-heading" className="py-16 md:py-32">
       <div className="mx-auto max-w-7xl space-y-8 px-6 md:space-y-16">
         <div className="text-center max-w-5xl mx-auto">
-          <Typography variant="h2" as="h2">
+          <Typography variant="h2" as="h2" id="framework-heading">
             The S.I.M.P.L.E. AI System
           </Typography>
           <Typography
@@ -116,8 +116,9 @@ export function SimpleAiSystemSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           {steps.map((step) => (
-            <div
+            <article
               key={step.title}
+              aria-labelledby={`step-title-${step.letter}`}
               className="flex flex-col items-start"
             >
               <div className="flex items-start gap-4">
@@ -125,7 +126,7 @@ export function SimpleAiSystemSection() {
                   {step.letter}
                 </div>
                 <div className="space-y-1">
-                  <Typography variant="h3" as="h3" className="text-2xl">
+                  <Typography variant="h3" as="h3" id={`step-title-${step.letter}`} className="text-2xl">
                     {step.title}
                   </Typography>
                   <Typography variant="p" as="p" className="text-lg text-muted-foreground !mt-1">
@@ -179,7 +180,7 @@ export function SimpleAiSystemSection() {
                   </Typography>
                 ))}
               </div>
-            </div>
+            </article>
           ))}
         </div>
         <div className="text-center">

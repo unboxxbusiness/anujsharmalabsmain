@@ -59,8 +59,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: siteConfig.url,
+    name: siteConfig.name,
+    description: siteConfig.description,
+    author: {
+      '@type': 'Person',
+      name: siteConfig.author,
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteConfig.url}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
   return (
     <html lang="en" className="!scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <HeroHeader />
         {children}
