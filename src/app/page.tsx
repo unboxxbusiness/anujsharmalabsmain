@@ -9,19 +9,23 @@ import { WorkWithMeSection } from '@/components/work-with-me-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'AI Systems for Marketing, Education & Digital Teams | Anuj Sharma',
   description:
-    'Welcome to the homepage of Anuj Sharma. Discover how AI systems can automate workflows, scale content, and help marketers, educators, and digital teams grow faster without complexity.',
+    'I build simple, practical AI systems that help marketers, educators, and digital teams automate workflows, scale content, and improve performance. Learn how to work smarter, not harder.',
   keywords: [
     'AI Systems',
-    'Workflow Automation',
-    'Content Scaling',
     'AI for Marketers',
     'AI for Educators',
+    'Workflow Automation',
+    'Content Automation',
     'Digital Transformation',
+    'Anuj Sharma',
+    'AI Consulting',
+    'SIMPLE AI System',
   ],
   openGraph: {
-    title: 'Anuj Sharma | AI Automation & Digital Marketing',
+    title:
+      'Anuj Sharma | AI Systems for Marketing, Education & Digital Teams',
     description:
       'I help teams automate workflows, scale content, and grow faster using simple, practical AI systems anyone can use — no technical expertise required.',
     images: [
@@ -34,7 +38,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'Anuj Sharma | AI Automation & Digital Marketing',
+    title:
+      'Anuj Sharma | AI Systems for Marketing, Education & Digital Teams',
     description:
       'I help teams automate workflows, scale content, and grow faster using simple, practical AI systems anyone can use — no technical expertise required.',
     images: [
